@@ -80,3 +80,20 @@ footer{padding:40px 7vw 25px;border-top:1px solid var(--line);background:#05070d
   .section{padding:82px 5vw}.hero{min-height:92vh}.hero h1{font-size:56px;letter-spacing:4px}.hero-decoration{width:430px;height:430px}.ring-1{width:230px;height:230px}.ring-2{width:340px;height:340px}.ring-3{width:450px;height:450px}
   .hero-text{font-size:13px}.hero-trust{gap:10px;font-size:10px}.feature-grid{grid-template-columns:1fr}.feature-card{min-height:auto}.price-toolbar{flex-direction:column;align-items:stretch}.price-note{text-align:center}.price-summary{padding:17px}.price-summary h3{font-size:16px}.price-body{padding:15px}.price-row{font-size:11px}.order-box{padding:28px}.btn-large{width:100%}.footer-inner{flex-direction:column;text-align:center}
 }
+
+
+/* ===== RESSA JOKI SOCIAL + GENSHIN GALLERY ===== */
+.genshin-gallery { max-width:1100px; margin:34px auto 0; display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.genshin-photo { margin:0; position:relative; overflow:hidden; border-radius:22px; min-height:240px; border:1px solid rgba(130,190,255,.18); background:#101522; }
+.genshin-photo img { width:100%; height:290px; display:block; object-fit:cover; transition:transform .5s ease; }
+.genshin-photo:hover img { transform:scale(1.05); }
+.genshin-photo figcaption { position:absolute; left:16px; bottom:14px; padding:8px 13px; border-radius:999px; background:rgba(5,8,16,.72); color:#fff; font-weight:700; border:1px solid rgba(255,255,255,.12); }
+.social-grid { max-width:900px; margin:30px auto 0; display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+.social-card { display:flex; align-items:center; gap:16px; padding:20px 22px; border-radius:20px; text-decoration:none; color:inherit; background:rgba(15,20,34,.82); border:1px solid rgba(130,190,255,.16); transition:transform .25s ease,border-color .25s ease; }
+.social-card:hover { transform:translateY(-4px); border-color:rgba(130,190,255,.4); }
+.social-icon { width:48px; height:48px; flex:0 0 48px; border-radius:15px; display:grid; place-items:center; background:rgba(100,170,255,.13); color:#a8e2ff; font-size:25px; font-weight:800; }
+.social-card strong,.social-card small { display:block; }
+.social-card strong { font-size:1.05rem; }
+.social-card small { margin-top:4px; color:#9ba9c4; }
+.social-arrow { margin-left:auto; color:#8fd8ff; font-size:20px; }
+@media (max-width:760px) { .genshin-gallery,.social-grid { grid-template-columns:1fr; } .genshin-photo img { height:230px; } }
