@@ -59,7 +59,7 @@ nav a{transition:.2s}nav a:hover{color:var(--accent)}
 .price-summary:hover{background:rgba(255,255,255,.018)}
 .price-summary h3{font-family:Cinzel,serif;font-size:19px}.price-summary small{display:block;color:#74809a;font-family:Inter,sans-serif;font-size:10px;margin-top:3px}
 .price-summary .arrow{font-size:22px;color:var(--accent);transition:transform .55s cubic-bezier(.22,1,.36,1),color .35s ease}.price-card.open .arrow{transform:rotate(180deg);color:#c8ddff}
-.price-body{max-height:0;opacity:0;overflow:hidden;border-top:1px solid transparent;padding:0 23px;transform:translateY(-8px);transition:max-height .7s cubic-bezier(.22,1,.36,1),opacity .45s ease,transform .7s cubic-bezier(.22,1,.36,1),padding .7s cubic-bezier(.22,1,.36,1),border-color .4s ease}
+.price-body{max-height:0;opacity:0;overflow:hidden;border-top:1px solid transparent;padding:0 23px;transform:translateY(-8px);transition:max-height .48s cubic-bezier(.22,1,.36,1),opacity .32s ease,transform .48s cubic-bezier(.22,1,.36,1),padding .48s cubic-bezier(.22,1,.36,1),border-color .3s ease}
 .price-card.open .price-body{max-height:4000px;opacity:1;padding:20px 23px 24px;transform:none;border-top-color:var(--line)}
 .price-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
 .price-group{padding:16px;border-radius:14px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06)}
