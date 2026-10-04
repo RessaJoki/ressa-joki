@@ -243,3 +243,82 @@ body.intro-active{overflow-x:hidden}
 }
 .social-card-tiktok { background: linear-gradient(135deg, rgba(20,20,24,.98), rgba(5,5,8,.92)); }
 .social-card-facebook { background: linear-gradient(135deg, rgba(24,119,242,.9), rgba(8,45,96,.92)); }
+
+
+/* ===== GENSHIN PHOTO SECTIONS ===== */
+#layanan{
+  position:relative;
+  overflow:hidden;
+  background:
+    linear-gradient(90deg,rgba(6,9,18,.95),rgba(7,10,20,.82)),
+    url("genshin-1.jpg") center/cover no-repeat;
+}
+#layanan::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 18% 35%,rgba(93,156,255,.16),transparent 34%);
+  pointer-events:none;
+}
+#layanan > *{position:relative;z-index:1}
+
+#cara-order{
+  position:relative;
+  overflow:hidden;
+  background:
+    linear-gradient(90deg,rgba(7,10,20,.96),rgba(8,11,22,.78)),
+    url("genshin-2.jpg") center/cover no-repeat;
+}
+#cara-order::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 78% 45%,rgba(152,111,255,.17),transparent 38%);
+  pointer-events:none;
+}
+#cara-order > *{position:relative;z-index:1}
+
+#sosmed{
+  position:relative;
+  overflow:hidden;
+  background:
+    linear-gradient(180deg,rgba(7,9,18,.94),rgba(7,9,18,.88)),
+    url("genshin-1.jpg") 72% center/cover no-repeat;
+}
+#sosmed::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 50% 20%,rgba(142,203,255,.12),transparent 40%);
+  pointer-events:none;
+}
+#sosmed > *{position:relative;z-index:1}
+
+#faq{
+  position:relative;
+  overflow:hidden;
+  background:
+    linear-gradient(180deg,rgba(7,9,18,.97),rgba(9,12,22,.91)),
+    url("genshin-2.jpg") 35% center/cover no-repeat;
+}
+#faq::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(7,9,18,.3),rgba(10,12,24,.72));
+  pointer-events:none;
+}
+#faq > *{position:relative;z-index:1}
+
+/* Keep the price section clean so the cards remain the focus. */
+#harga{
+  background:radial-gradient(circle at 50% 0%,rgba(82,109,255,.08),transparent 35%);
+}
+
+/* Subtle photo depth on cards placed over photo sections. */
+#layanan .feature-card,
+#cara-order .step,
+#sosmed .social-card,
+#faq .faq{
+  backdrop-filter:blur(8px);
+}
