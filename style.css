@@ -159,3 +159,84 @@ body.intro-active{overflow-x:hidden}
 .social-icon svg{width:25px;height:25px;display:block;fill:currentColor}
 .social-icon-tiktok{color:#f4f7ff}
 .social-icon-facebook{color:#f4f7ff}
+
+
+/* Region cards - distinct from social media buttons */
+.price-region,
+.price-group,
+.region-card,
+.price-card-section {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.055), rgba(7,9,18,.72)),
+    rgba(13,16,29,.78);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 12px 30px rgba(0,0,0,.16);
+  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease, background .3s ease;
+}
+
+.price-region::before,
+.price-group::before,
+.region-card::before,
+.price-card-section::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: linear-gradient(180deg, #8bbcff, #526dff);
+  opacity: .9;
+  pointer-events: none;
+}
+
+.price-region:hover,
+.price-group:hover,
+.region-card:hover,
+.price-card-section:hover {
+  transform: translateY(-3px);
+  border-color: rgba(139,188,255,.42);
+  box-shadow: 0 16px 38px rgba(0,0,0,.28), 0 0 24px rgba(82,109,255,.12);
+}
+
+/* Region accents */
+.price-region:nth-child(1)::before,
+.price-group:nth-child(1)::before,
+.region-card:nth-child(1)::before,
+.price-card-section:nth-child(1)::before { background: linear-gradient(180deg,#77bfff,#4b7dff); }
+
+.price-region:nth-child(2)::before,
+.price-group:nth-child(2)::before,
+.region-card:nth-child(2)::before,
+.price-card-section:nth-child(2)::before { background: linear-gradient(180deg,#ffe08a,#c99a35); }
+
+.price-region:nth-child(3)::before,
+.price-group:nth-child(3)::before,
+.region-card:nth-child(3)::before,
+.price-card-section:nth-child(3)::before { background: linear-gradient(180deg,#c79cff,#744bff); }
+
+.price-region:nth-child(4)::before,
+.price-group:nth-child(4)::before,
+.region-card:nth-child(4)::before,
+.price-card-section:nth-child(4)::before { background: linear-gradient(180deg,#8ee6a5,#3a9d68); }
+
+.price-region:nth-child(5)::before,
+.price-group:nth-child(5)::before,
+.region-card:nth-child(5)::before,
+.price-card-section:nth-child(5)::before { background: linear-gradient(180deg,#8eeaff,#4aa7d8); }
+
+.price-region:nth-child(6)::before,
+.price-group:nth-child(6)::before,
+.region-card:nth-child(6)::before,
+.price-card-section:nth-child(6)::before { background: linear-gradient(180deg,#ff9a6e,#d94d38); }
+
+.price-region:nth-child(7)::before,
+.price-group:nth-child(7)::before,
+.region-card:nth-child(7)::before,
+.price-card-section:nth-child(7)::before { background: linear-gradient(180deg,#b8e8ff,#6b9fd8); }
+
+/* Keep social cards visually distinct */
+.social-card {
+  background: linear-gradient(135deg, rgba(255,255,255,.08), rgba(10,12,22,.92));
+}
+.social-card-tiktok { background: linear-gradient(135deg, rgba(20,20,24,.98), rgba(5,5,8,.92)); }
+.social-card-facebook { background: linear-gradient(135deg, rgba(24,119,242,.9), rgba(8,45,96,.92)); }
