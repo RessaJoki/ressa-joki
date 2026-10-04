@@ -138,14 +138,29 @@ body.intro-active{overflow:hidden}
 .brand-mark.logo-brand{width:42px;height:42px;display:grid;place-items:center;flex:0 0 42px;overflow:hidden;border-radius:50%;}
 .brand-mark.logo-brand img{width:100%;height:100%;object-fit:contain;display:block;}
 
-/* Opening-to-hero reveal */
-body:not(.hero-ready) .hero-content{opacity:0;transform:translateY(28px);}
-.hero-content.hero-ready{opacity:1;transform:none;}
-.hero-content.hero-ready > .eyebrow{animation:heroItemIn .7s .08s both;}
-.hero-content.hero-ready > h1{animation:heroItemIn .8s .20s both;}
-.hero-content.hero-ready > .hero-subtitle{animation:heroItemIn .7s .36s both;}
-.hero-content.hero-ready > .hero-text{animation:heroItemIn .7s .48s both;}
-.hero-content.hero-ready > .hero-actions{animation:heroItemIn .7s .60s both;}
-.hero-content.hero-ready > .hero-trust{animation:heroItemIn .7s .72s both;}
-@keyframes heroItemIn{from{opacity:0;transform:translateY(22px);filter:blur(5px)}to{opacity:1;transform:none;filter:blur(0)}}
-@media(prefers-reduced-motion:reduce){body:not(.hero-ready) .hero-content{opacity:1;transform:none}.hero-content.hero-ready > *{animation:none}}
+
+
+/* Reliable hero title reveal after intro */
+.hero-content{opacity:1!important;transform:none!important;visibility:visible}
+.hero-content.hero-ready > .eyebrow,
+.hero-content.hero-ready > h1,
+.hero-content.hero-ready > .hero-subtitle,
+.hero-content.hero-ready > .hero-text,
+.hero-content.hero-ready > .hero-actions,
+.hero-content.hero-ready > .hero-trust{
+  opacity:0;
+  animation:heroTitleIn 1s cubic-bezier(.22,1,.36,1) both;
+}
+.hero-content.hero-ready > .eyebrow{animation-delay:.15s}
+.hero-content.hero-ready > h1{animation-delay:.55s}
+.hero-content.hero-ready > .hero-subtitle{animation-delay:1s}
+.hero-content.hero-ready > .hero-text{animation-delay:1.35s}
+.hero-content.hero-ready > .hero-actions{animation-delay:1.7s}
+.hero-content.hero-ready > .hero-trust{animation-delay:2.05s}
+@keyframes heroTitleIn{
+  from{opacity:0;transform:translateY(24px);filter:blur(7px)}
+  to{opacity:1;transform:none;filter:blur(0)}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-content.hero-ready > *{animation:none!important;opacity:1!important;transform:none!important;filter:none!important}
+}
