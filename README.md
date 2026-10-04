@@ -6,17 +6,9 @@
 - `script.js` — data harga, accordion, pencarian, WhatsApp, animasi
 
 ## Sebelum upload ke GitHub
-Buka `script.js`, lalu ganti:
+Nomor WhatsApp admin sudah disetel di `script.js` ke nomor Ressa Joki.
 
-```js
-const WHATSAPP_NUMBER = "6281234567890";
-```
-
-menjadi nomor WhatsApp admin, contoh:
-
-```js
-const WHATSAPP_NUMBER = "628xxxxxxxxxx";
-```
+Format nomor: kode negara tanpa `+`, spasi, atau tanda baca.
 
 Gunakan format nomor Indonesia tanpa `+`, spasi, atau tanda baca.
 
