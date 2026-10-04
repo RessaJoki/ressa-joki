@@ -233,6 +233,9 @@ function closeIntro(){
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Selalu mulai dari bagian paling atas saat website dibuka atau di-refresh.
+  if("scrollRestoration" in history) history.scrollRestoration = "manual";
+  window.scrollTo(0, 0);
   const intro = document.getElementById("introScreen");
   const enter = document.getElementById("introEnter");
   if(enter) enter.addEventListener("click", closeIntro);
