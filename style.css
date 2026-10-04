@@ -322,3 +322,39 @@ body.intro-active{overflow-x:hidden}
 #faq .faq{
   backdrop-filter:blur(8px);
 }
+
+
+/* Cinematic moving background for the main Genshin hero */
+.hero{
+  background-size:cover;
+  background-position:center;
+  animation:heroBackgroundMove 18s ease-in-out infinite alternate;
+  will-change:background-position,background-size;
+}
+@keyframes heroBackgroundMove{
+  0%{
+    background-position:48% 50%;
+    background-size:100% auto;
+  }
+  50%{
+    background-position:52% 48%;
+    background-size:106% auto;
+  }
+  100%{
+    background-position:56% 52%;
+    background-size:110% auto;
+  }
+}
+@media(max-width:720px){
+  .hero{
+    animation:heroBackgroundMoveMobile 20s ease-in-out infinite alternate;
+  }
+  @keyframes heroBackgroundMoveMobile{
+    0%{background-position:54% 50%;background-size:auto 100%}
+    50%{background-position:58% 48%;background-size:auto 106%}
+    100%{background-position:62% 52%;background-size:auto 110%}
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .hero{animation:none}
+}
