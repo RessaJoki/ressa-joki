@@ -6,6 +6,12 @@
 */
 const WHATSAPP_NUMBER = "6288224803141";
 
+const questPriceData = [
+  {name:"Mondstadt — Inazuma",subtitle:"Archon Quest Prolog sampai Chapter II",groups:[{title:"Harga",packages:[["Archon Quest Mondstadt sampai Inazuma","15K"]]}]},
+  {name:"Sumeru — Natlan",subtitle:"Archon Quest Chapter III sampai Chapter V",groups:[{title:"Harga",packages:[["Archon Quest Sumeru sampai Natlan","25K"]]}]},
+  {name:"Nod-Krai — Snezhnaya",subtitle:"Archon Quest Nod-Krai sampai Snezhnaya",groups:[{title:"Harga",packages:[["Archon Quest Nod-Krai dan Snezhnaya","30K"]]}]}
+];
+
 const priceData = [
   {
     name: "Mondstadt",
@@ -211,6 +217,29 @@ function renderPrices(filter=""){
   });
 }
 
+function renderQuestPrices(filter=""){
+  const list = document.getElementById("questPriceList");
+  if(!list) return;
+  const q = filter.trim().toLowerCase();
+  const filtered = questPriceData.filter(region => JSON.stringify(region).toLowerCase().includes(q));
+  if(!filtered.length){ list.innerHTML = '<div class="price-empty">Tidak menemukan harga quest yang cocok.</div>'; return; }
+  list.innerHTML = filtered.map((region,index) => `
+    <article class="price-card ${q && index === 0 ? 'open' : ''}">
+      <div class="price-summary" role="button" tabindex="0" aria-expanded="${q && index === 0 ? 'true':'false'}">
+        <div><h3>${esc(region.name)}</h3><small>${esc(region.subtitle)}</small></div>
+        <span class="arrow">⌄</span>
+      </div>
+      <div class="price-body"><div class="price-groups">
+        ${region.groups.map(group => `<div class="price-group"><h4>${esc(group.title)}</h4><div class="package-grid">${group.packages.map(p => `<div class="package">${esc(p[0])}: <strong>${esc(p[1])}</strong></div>`).join("")}</div></div>`).join("")}
+      </div></div>
+    </article>`).join("");
+  document.querySelectorAll("#questPriceList .price-summary").forEach(summary => {
+    const toggle=()=>{const card=summary.parentElement;const open=card.classList.toggle("open");summary.setAttribute("aria-expanded",String(open));};
+    summary.addEventListener("click",toggle);
+    summary.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle();}});
+  });
+}
+
 function buildWhatsApp(message = "Halo Ressa Joki, saya ingin order joki explore Genshin Impact."){
   const encoded = encodeURIComponent(message);
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
@@ -243,6 +272,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.scrollTo(0, 0);
 
   renderPrices();
+  renderQuestPrices();
   setWhatsAppLinks();
   document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -252,7 +282,7 @@ document.addEventListener("DOMContentLoaded", () => {
   menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => menu.classList.remove("open")));
   window.addEventListener("scroll", () => nav.classList.toggle("scrolled", window.scrollY > 20), {passive:true});
 
-  document.getElementById("priceSearch").addEventListener("input", e => renderPrices(e.target.value));
+  document.getElementById("priceSearch").addEventListener("input", e => { renderPrices(e.target.value); renderQuestPrices(e.target.value); });
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
