@@ -227,6 +227,8 @@ function closeIntro(){
   if(!intro || intro.classList.contains("hide")) return;
   intro.classList.add("hide");
   document.body.classList.remove("intro-active");
+  const heroContent = document.querySelector(".hero-content");
+  if(heroContent) setTimeout(() => heroContent.classList.add("hero-ready"), 520);
   setTimeout(() => intro.remove(), 850);
 }
 
