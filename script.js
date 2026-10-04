@@ -244,8 +244,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const nav = document.getElementById("navbar");
   const menu = document.getElementById("navMenu");
-  document.getElementById("menuToggle").addEventListener("click", () => menu.classList.toggle("open"));
-  menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => menu.classList.remove("open")));
+  const menuToggle = document.getElementById("menuToggle");
+  menuToggle.addEventListener("click", () => {
+    const open = menu.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(open));
+  });
+  menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+    menu.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+  }));
   window.addEventListener("scroll", () => nav.classList.toggle("scrolled", window.scrollY > 20), {passive:true});
 
   document.getElementById("priceSearch").addEventListener("input", e => renderPrices(e.target.value));
@@ -259,9 +266,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Jika nomor WhatsApp belum diganti, beri pengingat saat tombol order diklik.
   document.getElementById("whatsappMain").addEventListener("click", e => {
-    if(!WHATSAPP_NUMBER || WHATSAPP_NUMBER === "6281234567890"){
+    if(!WHATSAPP_NUMBER || !/^62\\d{8,15}$/.test(WHATSAPP_NUMBER)){
       e.preventDefault();
-      showToast("Ganti WHATSAPP_NUMBER di script.js dengan nomor admin Ressa Joki.");
+      showToast("Nomor WhatsApp admin belum valid.");
     }
   });
 });
