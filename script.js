@@ -218,7 +218,9 @@ function buildWhatsApp(message = "Halo Ressa Joki, saya ingin order joki explore
 
 function setWhatsAppLinks(){
   const main = document.getElementById("whatsappMain");
+  const floating = document.getElementById("floatingWhatsApp");
   if(main) main.href = buildWhatsApp();
+  if(floating) floating.href = buildWhatsApp();
   document.querySelectorAll("[data-wa]").forEach(a => a.href = buildWhatsApp(a.dataset.wa));
 }
 
@@ -237,6 +239,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const enter = document.getElementById("introEnter");
   if(enter) enter.addEventListener("click", closeIntro);
   window.setTimeout(closeIntro, 2600);
+  if("scrollRestoration" in history) history.scrollRestoration = "manual";
+  window.scrollTo(0, 0);
 
   renderPrices();
   setWhatsAppLinks();
