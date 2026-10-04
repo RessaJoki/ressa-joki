@@ -164,3 +164,19 @@ body.intro-active{overflow:hidden}
 @media(prefers-reduced-motion:reduce){
   .hero-content.hero-ready > *{animation:none!important;opacity:1!important;transform:none!important;filter:none!important}
 }
+
+/* Tambahan: alasan memilih Ressa Joki */
+.why-note{max-width:1100px;margin:28px auto 0;display:flex;align-items:flex-start;gap:16px;padding:22px 24px;border:1px solid rgba(142,203,255,.18);border-radius:18px;background:linear-gradient(145deg,rgba(142,203,255,.06),rgba(255,255,255,.02))}
+.why-note-icon{font-size:24px;color:var(--gold);line-height:1}.why-note h3{font-family:Cinzel,serif;font-size:18px;margin-bottom:5px}.why-note p{color:var(--muted);font-size:12px}
+
+/* Tambahan: keamanan akun */
+.safety-grid{max-width:1000px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.safety-card{display:flex;gap:18px;padding:22px;border:1px solid var(--line);border-radius:18px;background:rgba(10,14,25,.58)}
+.safety-card>span{font-family:Cinzel,serif;color:var(--accent2);font-size:20px}.safety-card h3{font-family:Cinzel,serif;font-size:16px;margin-bottom:5px}.safety-card p{font-size:12px;color:var(--muted)}
+.safety-warning{max-width:1000px;margin:18px auto 0;padding:15px 18px;border:1px solid rgba(232,215,166,.2);border-radius:14px;background:rgba(232,215,166,.045);color:#b9b2a0;font-size:11px}.safety-warning strong{color:var(--gold)}
+
+/* Floating WhatsApp */
+.floating-wa{position:fixed;right:22px;bottom:22px;z-index:150;display:flex;align-items:center;gap:9px;padding:12px 16px;border-radius:999px;background:linear-gradient(135deg,#dceeff,#88c7ff);color:#07101c;font-size:11px;font-weight:800;letter-spacing:.7px;box-shadow:0 12px 35px rgba(0,0,0,.35);transition:.25s}
+.floating-wa:hover{transform:translateY(-3px);box-shadow:0 16px 42px rgba(0,0,0,.45)}
+.floating-wa-icon{font-size:18px;line-height:1}.floating-wa-label{white-space:nowrap}
+@media(max-width:700px){.safety-grid{grid-template-columns:1fr}.floating-wa{right:14px;bottom:14px;padding:13px;width:52px;height:52px;justify-content:center}.floating-wa-label{display:none}.floating-wa-icon{font-size:21px}}
