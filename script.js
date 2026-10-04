@@ -2,7 +2,7 @@
   RESSA JOKI
   Ganti nomor WhatsApp di bawah dengan nomor admin.
   Format: kode negara tanpa +, spasi, atau tanda baca.
-  Contoh Indonesia: 6281234567890
+  Contoh Indonesia: 62xxxxxxxxxx
 */
 const WHATSAPP_NUMBER = "6288224803141";
 
