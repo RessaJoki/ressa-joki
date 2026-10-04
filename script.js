@@ -222,7 +222,20 @@ function setWhatsAppLinks(){
   document.querySelectorAll("[data-wa]").forEach(a => a.href = buildWhatsApp(a.dataset.wa));
 }
 
+function closeIntro(){
+  const intro = document.getElementById("introScreen");
+  if(!intro || intro.classList.contains("hide")) return;
+  intro.classList.add("hide");
+  document.body.classList.remove("intro-active");
+  setTimeout(() => intro.remove(), 850);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  const intro = document.getElementById("introScreen");
+  const enter = document.getElementById("introEnter");
+  if(enter) enter.addEventListener("click", closeIntro);
+  window.setTimeout(closeIntro, 2600);
+
   renderPrices();
   setWhatsAppLinks();
   document.getElementById("year").textContent = new Date().getFullYear();

@@ -97,3 +97,44 @@ footer{padding:40px 7vw 25px;border-top:1px solid var(--line);background:#05070d
 .social-card small { margin-top:4px; color:#9ba9c4; }
 .social-arrow { margin-left:auto; color:#8fd8ff; font-size:20px; }
 @media (max-width:760px) { .genshin-gallery,.social-grid { grid-template-columns:1fr; } .genshin-photo img { height:230px; } }
+
+/* ===== OPENING ANIMATION ===== */
+body.intro-active{overflow:hidden}
+.intro-screen{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;overflow:hidden;background:linear-gradient(180deg,rgba(3,5,14,.84),rgba(5,7,18,.97)),url("genshin-1.jpg") center/cover no-repeat;transition:opacity .75s ease,visibility .75s ease}
+.intro-screen::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 42%,rgba(171,117,255,.24),transparent 30%),linear-gradient(90deg,rgba(3,5,14,.72),transparent 50%,rgba(3,5,14,.72));}
+.intro-screen.hide{opacity:0;visibility:hidden;pointer-events:none}
+.intro-stars{position:absolute;inset:-50%;background-image:radial-gradient(circle,rgba(255,255,255,.8) 0 1px,transparent 1.5px),radial-gradient(circle,rgba(175,147,255,.7) 0 1px,transparent 1.5px);background-size:85px 85px,130px 130px;animation:starDrift 18s linear infinite;opacity:.5}
+.intro-glow{position:absolute;border-radius:50%;filter:blur(70px);opacity:.38;pointer-events:none}
+.intro-glow-a{width:38vw;height:38vw;background:#7b4dff;left:-12vw;top:-12vw;animation:floatGlow 6s ease-in-out infinite}
+.intro-glow-b{width:32vw;height:32vw;background:#45bfff;right:-10vw;bottom:-12vw;animation:floatGlow 7s ease-in-out infinite reverse}
+.intro-content{position:relative;z-index:2;text-align:center;padding:30px 20px;animation:introContent .9s cubic-bezier(.2,.8,.2,1) both}
+.intro-logo-wrap{position:relative;width:170px;height:170px;margin:0 auto 16px;display:grid;place-items:center}
+.intro-logo{width:130px;height:130px;object-fit:contain;filter:drop-shadow(0 0 28px rgba(184,139,255,.65));animation:logoPulse 2.4s ease-in-out infinite}
+.intro-ring{position:absolute;border:1px solid rgba(197,167,255,.42);border-radius:50%;inset:6px;animation:ringSpin 12s linear infinite}
+.intro-ring::after{content:"✦";position:absolute;top:-8px;left:50%;transform:translateX(-50%);color:#e6d7ff;text-shadow:0 0 15px #a56cff}
+.intro-ring-b{inset:24px;border-style:dashed;animation-direction:reverse;animation-duration:9s;opacity:.65}
+.intro-ring-b::after{top:auto;bottom:-8px}
+.intro-kicker{font-size:10px;letter-spacing:4px;color:#cbb9ff;margin-bottom:9px}
+.intro-content h2{font-family:Cinzel,serif;font-size:clamp(42px,8vw,76px);letter-spacing:7px;line-height:1;color:#fff;text-shadow:0 0 22px rgba(176,117,255,.5);margin:0}
+.intro-content h2 span{display:block;color:#c6a3ff}
+.intro-content p{margin:14px 0 24px;color:#d8dced;font-size:14px;letter-spacing:1px}
+.intro-progress{width:min(310px,72vw);height:3px;margin:0 auto 20px;background:rgba(255,255,255,.13);border-radius:99px;overflow:hidden}
+.intro-progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,#8c5cff,#e8d9ff,#6ecfff);box-shadow:0 0 14px #a974ff;animation:loadBar 2.1s cubic-bezier(.15,.75,.25,1) forwards}
+.intro-enter{border:1px solid rgba(197,159,255,.7);background:linear-gradient(135deg,rgba(118,65,255,.85),rgba(72,148,255,.75));color:#fff;padding:12px 24px;border-radius:999px;font-weight:800;letter-spacing:1.2px;cursor:pointer;box-shadow:0 0 25px rgba(129,84,255,.3);transition:transform .2s ease,box-shadow .2s ease}
+.intro-enter:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 0 32px rgba(129,84,255,.55)}
+.intro-enter b{margin-left:8px}
+.intro-skip{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:1.5px;color:rgba(220,224,245,.55);z-index:2}
+.logo-brand{width:42px;height:42px;display:grid;place-items:center;overflow:hidden;border-radius:50%;background:rgba(255,255,255,.04)}
+.logo-brand img{width:100%;height:100%;object-fit:cover}
+.hero{background-image:linear-gradient(90deg,rgba(7,9,18,.92) 0%,rgba(7,9,18,.72) 42%,rgba(7,9,18,.56) 100%),url("genshin-1.jpg");background-size:cover;background-position:center;position:relative}
+.order-box{position:relative;overflow:hidden;background:linear-gradient(90deg,rgba(8,11,23,.94),rgba(8,11,23,.72)),url("genshin-2.jpg") center/cover no-repeat}
+.order-box::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 30%,rgba(140,99,255,.25),transparent 42%);pointer-events:none}
+.order-box>*{position:relative;z-index:1}
+@keyframes introContent{from{opacity:0;transform:translateY(24px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes logoPulse{0%,100%{transform:scale(1);filter:drop-shadow(0 0 22px rgba(184,139,255,.5))}50%{transform:scale(1.045);filter:drop-shadow(0 0 34px rgba(184,139,255,.85))}}
+@keyframes ringSpin{to{transform:rotate(360deg)}}
+@keyframes starDrift{to{transform:translate3d(85px,85px,0)}}
+@keyframes floatGlow{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(20px,-18px,0)}}
+@keyframes loadBar{to{width:100%}}
+@media(max-width:720px){.intro-logo-wrap{width:145px;height:145px}.intro-logo{width:110px;height:110px}.intro-content h2{letter-spacing:4px}.intro-kicker{letter-spacing:2.5px;font-size:9px}.intro-content p{font-size:12px}.hero{background-position:60% center}.order-box{background-position:58% center}}
+@media(prefers-reduced-motion:reduce){.intro-stars,.intro-glow,.intro-logo,.intro-ring,.intro-ring-b{animation:none}.intro-progress span{animation:none;width:100%}.intro-content{animation:none}.intro-screen{transition:none}}

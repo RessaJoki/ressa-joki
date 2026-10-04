@@ -16,12 +16,31 @@
   <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png">
   <link rel="manifest" href="manifest.webmanifest">
 </head>
-<body>
+<body class="intro-active">
+  <div class="intro-screen" id="introScreen" aria-label="Pembuka Ressa Joki">
+    <div class="intro-stars"></div>
+    <div class="intro-glow intro-glow-a"></div>
+    <div class="intro-glow intro-glow-b"></div>
+    <div class="intro-content">
+      <div class="intro-logo-wrap">
+        <span class="intro-ring intro-ring-a"></span>
+        <span class="intro-ring intro-ring-b"></span>
+        <img class="intro-logo" src="ressa-logo.png" alt="Ressa Joki">
+      </div>
+      <div class="intro-kicker">✦ GENSHIN IMPACT EXPLORE ✦</div>
+      <h2>RESSA <span>JOKI</span></h2>
+      <p>Jasa Joki Explore Genshin Impact</p>
+      <div class="intro-progress"><span></span></div>
+      <button class="intro-enter" id="introEnter" type="button">MASUK WEBSITE <b>↗</b></button>
+    </div>
+    <div class="intro-skip">Website akan terbuka otomatis</div>
+  </div>
+
   <div class="stars"></div>
 
   <header class="navbar" id="navbar">
     <a class="brand" href="#home" aria-label="Ressa Joki">
-      <span class="brand-mark">✦</span>
+      <span class="brand-mark logo-brand"><img src="ressa-logo.png" alt="Ressa Joki"></span>
       <span>
         <strong>RESSA JOKI</strong>
         <small>GENSHIN EXPLORE</small>
@@ -210,7 +229,7 @@
   <footer>
     <div class="footer-inner">
       <div class="brand footer-brand">
-        <span class="brand-mark">✦</span>
+        <span class="brand-mark logo-brand"><img src="ressa-logo.png" alt="Ressa Joki"></span>
         <span><strong>RESSA JOKI</strong><small>GENSHIN EXPLORE</small></span>
       </div>
       <p>© <span id="year"></span> Ressa Joki. All rights reserved.</p>
