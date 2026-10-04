@@ -2,7 +2,7 @@
   RESSA JOKI
   Ganti nomor WhatsApp di bawah dengan nomor admin.
   Format: kode negara tanpa +, spasi, atau tanda baca.
-  Contoh Indonesia: 62xxxxxxxxxx
+  Contoh Indonesia: 6281234567890
 */
 const WHATSAPP_NUMBER = "6288224803141";
 
@@ -233,9 +233,6 @@ function closeIntro(){
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Selalu mulai dari bagian paling atas saat website dibuka atau di-refresh.
-  if("scrollRestoration" in history) history.scrollRestoration = "manual";
-  window.scrollTo(0, 0);
   const intro = document.getElementById("introScreen");
   const enter = document.getElementById("introEnter");
   if(enter) enter.addEventListener("click", closeIntro);
@@ -247,15 +244,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const nav = document.getElementById("navbar");
   const menu = document.getElementById("navMenu");
-  const menuToggle = document.getElementById("menuToggle");
-  menuToggle.addEventListener("click", () => {
-    const open = menu.classList.toggle("open");
-    menuToggle.setAttribute("aria-expanded", String(open));
-  });
-  menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
-    menu.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
-  }));
+  document.getElementById("menuToggle").addEventListener("click", () => menu.classList.toggle("open"));
+  menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => menu.classList.remove("open")));
   window.addEventListener("scroll", () => nav.classList.toggle("scrolled", window.scrollY > 20), {passive:true});
 
   document.getElementById("priceSearch").addEventListener("input", e => renderPrices(e.target.value));
@@ -269,9 +259,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Jika nomor WhatsApp belum diganti, beri pengingat saat tombol order diklik.
   document.getElementById("whatsappMain").addEventListener("click", e => {
-    if(!WHATSAPP_NUMBER || !/^62\\d{8,15}$/.test(WHATSAPP_NUMBER)){
+    if(!WHATSAPP_NUMBER || WHATSAPP_NUMBER === "6281234567890"){
       e.preventDefault();
-      showToast("Nomor WhatsApp admin belum valid.");
+      showToast("Ganti WHATSAPP_NUMBER di script.js dengan nomor admin Ressa Joki.");
     }
   });
 });
