@@ -214,3 +214,25 @@ body.intro-active{overflow:hidden}
   .price-info-note,.price-info-cta{margin-left:14px;margin-right:14px}
   .price-info-cta{padding-bottom:17px}
 }
+
+
+/* ===== TESTIMONIALS ===== */
+.testimonial-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.testimonial-card{position:relative;padding:25px;border:1px solid rgba(142,203,255,.16);border-radius:22px;background:linear-gradient(145deg,rgba(22,29,51,.88),rgba(9,13,24,.92));box-shadow:0 16px 45px rgba(0,0,0,.16);overflow:hidden}
+.testimonial-card::before{content:"";position:absolute;inset:0 auto auto 0;width:100%;height:2px;background:linear-gradient(90deg,rgba(142,203,255,.75),rgba(187,162,255,.45),transparent)}
+.testimonial-top{display:flex;align-items:center;gap:12px}
+.testimonial-avatar{width:42px;height:42px;display:grid;place-items:center;flex:0 0 42px;border-radius:14px;background:rgba(142,203,255,.09);border:1px solid rgba(142,203,255,.18);color:var(--accent);font-size:11px;font-weight:800;letter-spacing:1px}
+.testimonial-top strong,.testimonial-top small{display:block}
+.testimonial-top strong{font-size:13px}
+.testimonial-top small{margin-top:2px;color:#7f8aa3;font-size:10px}
+.testimonial-stars{margin-left:auto;color:var(--gold);font-size:11px;letter-spacing:2px}
+.testimonial-card blockquote{margin:22px 0 13px;padding:17px 18px;border-radius:15px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.025);font-family:Cinzel,serif;font-size:16px;line-height:1.55;color:#f5f7ff}
+.testimonial-reply{color:#8994ad;font-size:11px;line-height:1.6}
+.testimonial-note{max-width:1000px;margin:18px auto 0;display:flex;align-items:center;gap:10px;padding:13px 16px;border:1px solid rgba(232,215,166,.13);border-radius:14px;background:rgba(232,215,166,.035);color:#8994ad;font-size:10px}
+.testimonial-note span{color:var(--gold);font-size:16px}
+@media(max-width:720px){
+  .testimonial-grid{grid-template-columns:1fr}
+  .testimonial-card{padding:21px}
+  .testimonial-card blockquote{font-size:14px}
+  .testimonial-stars{font-size:10px}
+}
