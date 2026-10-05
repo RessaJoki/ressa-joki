@@ -47,7 +47,7 @@ nav a{transition:.2s}nav a:hover{color:var(--accent)}
 .feature-grid{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .feature-card{padding:27px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(28,35,62,.72),rgba(12,15,27,.72));border-radius:var(--radius);min-height:220px;transition:.3s}
 .feature-card:hover{transform:translateY(-5px);border-color:rgba(142,203,255,.32)}
-.feature-icon{font-size:30px;color:var(--accent);margin-bottom:22px}.feature-card h3{font-family:Cinzel,serif;margin-bottom:9px}.feature-card p{color:var(--muted);font-size:13px}
+.feature-icon{font-size:30px;color:var(--accent);margin-bottom:14px}.feature-card h3{font-family:Cinzel,serif;margin-bottom:9px}.feature-card p{color:var(--muted);font-size:13px}
 .price-toolbar{max-width:1100px;margin:0 auto 22px;display:flex;justify-content:space-between;gap:14px;align-items:center}
 .search-wrap{display:flex;align-items:center;gap:10px;border:1px solid var(--line);background:rgba(13,17,30,.78);border-radius:14px;padding:11px 14px;max-width:520px;flex:1}
 .search-wrap span{font-size:22px;color:var(--accent)}.search-wrap input{width:100%;background:none;border:0;outline:0;color:#fff;font-size:13px}.search-wrap input::placeholder{color:#68728b}
