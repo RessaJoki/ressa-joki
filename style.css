@@ -126,7 +126,7 @@ body.intro-active{overflow:hidden}
 .order-box::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 30%,rgba(140,99,255,.25),transparent 42%);pointer-events:none}
 .order-box>*{position:relative;z-index:1}
 @keyframes introContent{from{opacity:0;transform:translateY(24px) scale(.96)}to{opacity:1;transform:none}}
-@keyframes logoPulse{0%,100%{transform:scale(1);filter:drop-shadow(0 0 22px rgba(184,139,255,.5))}50%{transform:scale(1.045);filter:drop-shadow(0 0 34px rgba(184,139,255,.85))}}
+@keyframes logoPulse{0%,100%{transform:translate(-50%,-50%) scale(1);filter:drop-shadow(0 0 22px rgba(184,139,255,.5))}50%{transform:translate(-50%,-50%) scale(1.045);filter:drop-shadow(0 0 34px rgba(184,139,255,.85))}}
 @keyframes ringSpin{to{transform:rotate(360deg)}}
 @keyframes starDrift{to{transform:translate3d(85px,85px,0)}}
 @keyframes floatGlow{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(20px,-18px,0)}}
