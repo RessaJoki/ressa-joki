@@ -7,9 +7,9 @@
 const WHATSAPP_NUMBER = "6288224803141";
 
 const testimonialData = [
-  {name:"Rep",service:"Archon Quest",rating:5,text:"\"auto jadi langganan ini mah\""},
-  {name:"Kairan",service:"Archon Quest",rating:5,text:"\"Auto langganan di kak soalnya ketemu yang trusted\""},
-  {name:"Namiyaeeu",service:"Joki Explore",rating:5,text:"\"Jujur ga nyangka secepet ini\""}
+  {name:"Rep",service:"Archon Quest",rating:5,text:"auto jadi langganan ini mah"},
+  {name:"Kairan",service:"Archon Quest",rating:5,text:"Auto langganan di kak soalnya ketemu yang trusted"},
+  {name:"Namiyaeeu",service:"Joki Explore",rating:5,text:"Jujur ga nyangka secepet ini"}
 ];
 
 const questPriceData = [
@@ -258,9 +258,9 @@ function renderTestimonials(){
     return `
       <article class="testimonial-card reveal visible">
         <span class="testimonial-mark">“</span>
-        <span class="testimonial-category">${esc(item.service || "Ressa Joki")}</span>
+        <span class="testimonial-category">✦ ${esc(item.service || "Ressa Joki")}</span>
         <p>${esc(item.text)}</p>
-        <span class="testimonial-author">${rating} &nbsp;—&nbsp; ${esc(item.name)}</span>
+        <span class="testimonial-author"><span class="testimonial-rating">${rating}</span> &nbsp;—&nbsp; ${esc(item.name)}</span>
       </article>
     `;
   }).join("");
