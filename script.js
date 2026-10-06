@@ -90,23 +90,35 @@ const priceData = [
     ]
   },
   {
-    name:"NATLAN", subtitle:"Natlan • 5.0 • 5.2 • 5.5 • Easybreeze Holiday Resort",
+    name:"Natlan 5.0", subtitle:"Natlan Map 5.0",
     groups:[
-      {title:"Quest Prasyarat — Natlan 5.0",rows:[["Antara janji dan lupa","35K"],["Bayangan gunung","40K"],["Kisah mencari mimpi di tengah api","35K"],["Memancing masalah","10K"],["Kembalikan malam pada sang malam","10K"]]},
-      {title:"Explore — Natlan 5.0",rows:[["Tequemecan Valley","60K"],["Coatepec Mountain","60K"],["Basin of Unnumbered Flames","60K"],["Toyac Springs","60K"]]},
-      {title:"Paket — Natlan 5.0",packages:[["Full Quest","120K"],["Full Explore","200K"],["Quest + Explore","300K"]]},
-
-      {title:"Quest Prasyarat — Natlan 5.2",rows:[["Kota yang terkubur oleh abu","50K"],["Misteri bulu mengapung di tepi pantai","15K"],["Buka jantungmu untuk ku","15K"]]},
-      {title:"Explore — Natlan 5.2",rows:[["Tezcatepetonco Range","60K"],["Quahuacan Cliff","40K"],["Ochkanatlan","70K"]]},
-      {title:"Paket — Natlan 5.2",packages:[["Full Quest","70K"],["Full Explore","150K"],["Quest + Explore","200K"]]},
-
-      {title:"Quest Prasyarat — Natlan 5.5",rows:[["Jalan menuju puncak berkobar","10K"],["Penyair kota yang hancur","50K"],["Akhir dari kembalinya bara api","10K"]]},
-      {title:"Explore — Natlan 5.5",rows:[["Atocpan","75K"],["Ancient Sacred Mountain","75K"]]},
-      {title:"Paket — Natlan 5.5",packages:[["Quest + Explore","220K"]]},
-
-      {title:"Quest Prasyarat — Easybreeze Holiday Resort",rows:[["Menuju Liburan yang Menyenangkan!","10K"],["Tantang tebing warna (bag 1)","10K"],["Tantang tebing guitzli (bag 2)","15K"],["Tantang teluk gelombang (bag 3)","10K"],["Dunia adalah Kanvasmu (bag 4)","10K"],["Jejak Chroma: Bersinarlah Pipilpan Idol","5K"],["Paititi Mimpi Indah","5K"]]},
-      {title:"Quest Dunia — Easybreeze Holiday Resort",rows:[["Kejutan yang Menanti Kita Semua!","20K"],["Penutupan Malam Musim Panas yang Penuh Warna!","10K"],["Penyintas Terakhir dari Temochzitoc (dapat 5 chest)","25K"],["Pertemuan Selalu Terjadi di Waktu Senggang","5K"],["Perburuan Berlanjut pada Perjumpaan","5K"]]},
-      {title:"Paket — Easybreeze Holiday Resort",packages:[["Semua Quest","130K"],["Quest Prasyarat Wajib","70K"],["Eksplore","150K"],["Quest Prasyarat + Eksplore","200K"],["Semua Quest + Eksplore","270K"]]}
+      {title:"Quest Prasyarat",rows:[["Antara janji dan lupa","35K"],["Bayangan gunung","40K"],["Kisah mencari mimpi di tengah api","35K"],["Memancing masalah","10K"],["Kembalikan malam pada sang malam","10K"]]},
+      {title:"Explore",rows:[["Tequemecan Valley","60K"],["Coatepec Mountain","60K"],["Basin of Unnumbered Flames","60K"],["Toyac Springs","60K"]]},
+      {title:"Paket",packages:[["Full Quest","120K"],["Full Explore","200K"],["Quest + Explore","300K"]]}
+    ]
+  },
+  {
+    name:"Natlan 5.2", subtitle:"Natlan Map 5.2",
+    groups:[
+      {title:"Quest Prasyarat",rows:[["Kota yang terkubur oleh abu","50K"],["Misteri bulu mengapung di tepi pantai","15K"],["Buka jantungmu untuk ku","15K"]]},
+      {title:"Explore",rows:[["Tezcatepetonco Range","60K"],["Quahuacan Cliff","40K"],["Ochkanatlan","70K"]]},
+      {title:"Paket",packages:[["Full Quest","70K"],["Full Explore","150K"],["Quest + Explore","200K"]]}
+    ]
+  },
+  {
+    name:"Natlan 5.5", subtitle:"Natlan Map 5.5",
+    groups:[
+      {title:"Quest Prasyarat",rows:[["Jalan menuju puncak berkobar","10K"],["Penyair kota yang hancur","50K"],["Akhir dari kembalinya bara api","10K"]]},
+      {title:"Explore",rows:[["Atocpan","75K"],["Ancient Sacred Mountain","75K"]]},
+      {title:"Paket",packages:[["Quest + Explore","220K"]]}
+    ]
+  },
+  {
+    name:"Easybreeze Holiday Resort", subtitle:"Quest & Explore",
+    groups:[
+      {title:"Quest Prasyarat (wajib)",rows:[["Menuju Liburan yang Menyenangkan!","10K"],["Tantang tebing warna (bag 1)","10K"],["Tantang tebing guitzli (bag 2)","15K"],["Tantang teluk gelombang (bag 3)","10K"],["Dunia adalah Kanvasmu (bag 4)","10K"],["Jejak Chroma: Bersinarlah Pipilpan Idol","5K"],["Paititi Mimpi Indah","5K"]]},
+      {title:"Quest Dunia",rows:[["Kejutan yang Menanti Kita Semua!","20K"],["Penutupan Malam Musim Panas yang Penuh Warna!","10K"],["Penyintas Terakhir dari Temochzitoc (dapat 5 chest)","25K"],["Pertemuan Selalu Terjadi di Waktu Senggang","5K"],["Perburuan Berlanjut pada Perjumpaan","5K"]]},
+      {title:"Paket",packages:[["Semua Quest","130K"],["Quest Prasyarat Wajib","70K"],["Eksplore","150K"],["Quest Prasyarat + Eksplore","200K"],["Semua Quest + Eksplore","270K"]]}
     ]
   },
   {
