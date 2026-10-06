@@ -6,6 +6,12 @@
 */
 const WHATSAPP_NUMBER = "6288224803141";
 
+const testimonialData = [
+  // Testimoni yang sudah disetujui ditambahkan di sini.
+  // Contoh:
+  // {name:"Adit",service:"Joki Explore",rating:5,text:"Pengerjaannya cepat dan sesuai target."}
+];
+
 const questPriceData = [
   {name:"Mondstadt, Liyue, dan Inazuma",subtitle:"Archon Quest wilayah Mondstadt sampai Inazuma",groups:[{title:"Harga",packages:[["Archon Quest Mondstadt, Liyue, dan Inazuma","15K"]]}]},
   {name:"Sumeru, Fontaine, dan Natlan",subtitle:"Archon Quest wilayah Sumeru sampai Natlan",groups:[{title:"Harga",packages:[["Archon Quest Sumeru, Fontaine, dan Natlan","25K"]]}]},
@@ -240,6 +246,26 @@ function renderQuestPrices(filter=""){
   });
 }
 
+function renderTestimonials(){
+  const list = document.getElementById("testimonialList");
+  if(!list) return;
+  if(!testimonialData.length){
+    list.innerHTML = "";
+    return;
+  }
+  list.innerHTML = testimonialData.map(item => {
+    const rating = "★".repeat(Math.max(0, Math.min(5, Number(item.rating) || 0)));
+    return `
+      <article class="testimonial-card reveal visible">
+        <span class="testimonial-mark">“</span>
+        <span class="testimonial-category">${esc(item.service || "Ressa Joki")}</span>
+        <p>${esc(item.text)}</p>
+        <span class="testimonial-author">${rating} &nbsp;—&nbsp; ${esc(item.name)}</span>
+      </article>
+    `;
+  }).join("");
+}
+
 function buildWhatsApp(message = "Halo Ressa Joki, saya ingin order joki explore Genshin Impact."){
   const encoded = encodeURIComponent(message);
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
@@ -273,6 +299,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderPrices();
   renderQuestPrices();
+  renderTestimonials();
   setWhatsAppLinks();
   document.getElementById("year").textContent = new Date().getFullYear();
 
