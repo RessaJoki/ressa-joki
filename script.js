@@ -7,9 +7,9 @@
 const WHATSAPP_NUMBER = "6288224803141";
 
 const questPriceData = [
-  {name:"Mondstadt — Inazuma",subtitle:"Archon Quest Prolog sampai Chapter II",groups:[{title:"Harga",packages:[["Archon Quest Mondstadt sampai Inazuma","15K"]]}]},
-  {name:"Sumeru — Natlan",subtitle:"Archon Quest Chapter III sampai Chapter V",groups:[{title:"Harga",packages:[["Archon Quest Sumeru sampai Natlan","25K"]]}]},
-  {name:"Nod-Krai — Snezhnaya",subtitle:"Archon Quest Nod-Krai sampai Snezhnaya",groups:[{title:"Harga",packages:[["Archon Quest Nod-Krai dan Snezhnaya","30K"]]}]}
+  {name:"Mondstadt, Liyue, dan Inazuma",subtitle:"Archon Quest wilayah Mondstadt sampai Inazuma",groups:[{title:"Harga",packages:[["Archon Quest Mondstadt, Liyue, dan Inazuma","15K"]]}]},
+  {name:"Sumeru, Fontaine, dan Natlan",subtitle:"Archon Quest wilayah Sumeru sampai Natlan",groups:[{title:"Harga",packages:[["Archon Quest Sumeru, Fontaine, dan Natlan","25K"]]}]},
+  {name:"Nod-Krai dan Snezhnaya",subtitle:"Archon Quest wilayah Nod-Krai dan Snezhnaya",groups:[{title:"Harga",packages:[["Archon Quest Nod-Krai dan Snezhnaya","30K"]]}]}
 ];
 
 const priceData = [
