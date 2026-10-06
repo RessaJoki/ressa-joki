@@ -350,12 +350,18 @@ function initAutoScroll(){
   let running=false;
   let frameId=null;
   let lastTime=0;
-  const speed=28;
+  let startTime=0;
+  let startScroll=0;
+  let targetScroll=0;
+  const duration=25000;
 
   const stop=()=>{
     running=false;
     if(frameId!==null){cancelAnimationFrame(frameId);frameId=null;}
     lastTime=0;
+    startTime=0;
+    startScroll=0;
+    targetScroll=0;
     control.classList.remove("active");
     control.setAttribute("aria-label","Mulai scroll otomatis");
     control.innerHTML='<span class="auto-scroll-icon">▶</span><span class="auto-scroll-label">Auto Scroll</span>';
@@ -363,12 +369,17 @@ function initAutoScroll(){
 
   const tick=(time)=>{
     if(!running) return;
-    if(!lastTime) lastTime=time;
-    const delta=Math.min(time-lastTime,50);
-    lastTime=time;
+    if(!startTime){
+      startTime=time;
+      startScroll=window.scrollY;
+      targetScroll=document.documentElement.scrollHeight-window.innerHeight;
+    }
+    const elapsed=Math.min(time-startTime,duration);
+    const progress=elapsed/duration;
     const maxScroll=document.documentElement.scrollHeight-window.innerHeight;
-    if(window.scrollY>=maxScroll-1){stop();return;}
-    window.scrollBy(0,(speed*delta)/1000);
+    targetScroll=Math.max(targetScroll,maxScroll);
+    window.scrollTo(0,startScroll+(targetScroll-startScroll)*progress);
+    if(progress>=1 || window.scrollY>=maxScroll-1){stop();return;}
     frameId=requestAnimationFrame(tick);
   };
 
@@ -378,6 +389,9 @@ function initAutoScroll(){
     if(maxScroll<=1) return;
     running=true;
     lastTime=0;
+    startTime=0;
+    startScroll=window.scrollY;
+    targetScroll=document.documentElement.scrollHeight-window.innerHeight;
     control.classList.add("active");
     control.setAttribute("aria-label","Berhenti scroll otomatis");
     control.innerHTML='<span class="auto-scroll-icon">Ⅱ</span><span class="auto-scroll-label">Stop Scroll</span>';
