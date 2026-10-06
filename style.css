@@ -232,3 +232,5 @@ body.intro-active{overflow:hidden}
 .testimonial-empty-icon{flex:0 0 auto;color:var(--gold);font-size:24px}
 .testimonial-empty p{color:var(--muted);font-size:13px;line-height:1.7}
 @media(max-width:720px){.testimonial-empty{padding:22px 18px;align-items:flex-start}.testimonial-empty p{font-size:12px}}
+
+.testimonial-submit{display:table;margin:16px auto 0}
