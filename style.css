@@ -105,10 +105,10 @@ body.intro-active{overflow:hidden}
 .intro-content{position:relative;z-index:2;text-align:center;padding:30px 20px;animation:introContent .9s cubic-bezier(.2,.8,.2,1) both}
 .intro-logo-wrap{position:relative;width:170px;height:170px;margin:0 auto 16px;display:block}
 .intro-logo{position:absolute;width:125px;height:125px;left:50%;top:50%;transform:translate(-50%,-50%);object-fit:contain;filter:drop-shadow(0 0 28px rgba(184,139,255,.65));animation:logoPulse 2.4s ease-in-out infinite}
-.intro-ring{position:absolute;border:1px solid rgba(197,167,255,.42);border-radius:50%;inset:6px;animation:ringSpin 12s linear infinite}
-.intro-ring::after{content:"✦";position:absolute;top:-8px;left:50%;transform:translateX(-50%);color:#e6d7ff;text-shadow:0 0 15px #a56cff}
-.intro-ring-b{inset:24px;border-style:dashed;animation-direction:reverse;animation-duration:9s;opacity:.65}
-.intro-ring-b::after{top:auto;bottom:-8px}
+.intro-ring{display:none}
+.intro-ring::after{display:none}
+.intro-ring-b{display:none}
+.intro-ring-b::after{display:none}
 .intro-kicker{font-size:10px;letter-spacing:4px;color:#cbb9ff;margin-bottom:9px}
 .intro-content h2{font-family:Cinzel,serif;font-size:clamp(42px,8vw,76px);letter-spacing:7px;line-height:1;color:#fff;text-shadow:0 0 22px rgba(176,117,255,.5);margin:0}
 .intro-content h2 span{color:#fff}
@@ -132,7 +132,7 @@ body.intro-active{overflow:hidden}
 @keyframes floatGlow{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(20px,-18px,0)}}
 @keyframes loadBar{to{width:100%}}
 @media(max-width:720px){.intro-logo-wrap{width:145px;height:145px}.intro-logo{width:126px;height:126px}.intro-content h2{letter-spacing:4px}.intro-kicker{letter-spacing:2.5px;font-size:9px}.intro-content p{font-size:12px}.hero{background-position:60% center}.order-box{background-position:58% center}}
-@media(prefers-reduced-motion:reduce){.intro-stars,.intro-glow,.intro-logo,.intro-ring,.intro-ring-b{animation:none}.intro-progress span{animation:none;width:100%}.intro-content{animation:none}.intro-screen{transition:none}}
+@media(prefers-reduced-motion:reduce){.intro-stars,.intro-glow,.intro-logo,.intro-ring,.intro-ring-b{display:none}.intro-progress span{animation:none;width:100%}.intro-content{animation:none}.intro-screen{transition:none}}
 
 
 /* Navbar logo */
