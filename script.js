@@ -333,3 +333,76 @@ function showToast(text){
   toast.classList.add("show");
   setTimeout(() => toast.classList.remove("show"), 3500);
 }
+
+
+/* ===== MANUAL AUTO SCROLL ===== */
+function initAutoScroll(){
+  if(document.getElementById("autoScrollControl")) return;
+
+  const control=document.createElement("button");
+  control.id="autoScrollControl";
+  control.className="auto-scroll-control";
+  control.type="button";
+  control.setAttribute("aria-label","Mulai scroll otomatis");
+  control.innerHTML='<span class="auto-scroll-icon">▶</span><span class="auto-scroll-label">Auto Scroll</span>';
+  document.body.appendChild(control);
+
+  let running=false;
+  let frameId=null;
+  let lastTime=0;
+  const speed=28;
+
+  const stop=()=>{
+    running=false;
+    if(frameId!==null){cancelAnimationFrame(frameId);frameId=null;}
+    lastTime=0;
+    control.classList.remove("active");
+    control.setAttribute("aria-label","Mulai scroll otomatis");
+    control.innerHTML='<span class="auto-scroll-icon">▶</span><span class="auto-scroll-label">Auto Scroll</span>';
+  };
+
+  const tick=(time)=>{
+    if(!running) return;
+    if(!lastTime) lastTime=time;
+    const delta=Math.min(time-lastTime,50);
+    lastTime=time;
+    const maxScroll=document.documentElement.scrollHeight-window.innerHeight;
+    if(window.scrollY>=maxScroll-1){stop();return;}
+    window.scrollBy(0,(speed*delta)/1000);
+    frameId=requestAnimationFrame(tick);
+  };
+
+  const start=()=>{
+    if(running) return;
+    const maxScroll=document.documentElement.scrollHeight-window.innerHeight;
+    if(maxScroll<=1) return;
+    running=true;
+    lastTime=0;
+    control.classList.add("active");
+    control.setAttribute("aria-label","Berhenti scroll otomatis");
+    control.innerHTML='<span class="auto-scroll-icon">Ⅱ</span><span class="auto-scroll-label">Stop Scroll</span>';
+    frameId=requestAnimationFrame(tick);
+  };
+
+  control.addEventListener("click",e=>{
+    e.stopPropagation();
+    if(running) stop(); else start();
+  });
+
+  const userInteract=e=>{
+    if(e.target===control || control.contains(e.target)) return;
+    if(running) stop();
+  };
+
+  window.addEventListener("wheel",userInteract,{passive:true});
+  window.addEventListener("touchstart",userInteract,{passive:true});
+  window.addEventListener("pointerdown",userInteract,{passive:true});
+  window.addEventListener("keydown",e=>{
+    if(e.target===control || control.contains(e.target)) return;
+    if(running) stop();
+  });
+
+  window.addEventListener("beforeunload",stop);
+}
+
+document.addEventListener("DOMContentLoaded",initAutoScroll);
