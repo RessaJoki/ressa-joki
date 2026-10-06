@@ -114,6 +114,23 @@ const priceData = [
     ]
   },
   {
+    name:"Nodkrai 6.0", subtitle:"Husi Island • Lempo Isle • Paha Isle",
+    groups:[
+      {title:"Husi Island",rows:[["Kisah Gerbang Batu","5K"],["Cermin, Labirin, dan Sang Tsar","10K"],["Demi Sebuah Pulau yang Hijau","10K"],["Hadiah Fatamorgana","5K"],["Gema Masa Lalu yang Tak Terselesaikan","10K"]]},
+      {title:"Lempo Isle",rows:[["Kecemasan Pergantian Karir","10K"],["Teman Lembah Moley","10K"],["Tim Teliti, atau Tim Intuisi?","15K"],["Hati Pemberita Rahasia","20K"],["Bisikan di Bawah Ombak","10K"],["Warna Kekosongan","10K"],["Kekuatan Penelitian","10K"]]},
+      {title:"Paha Isle",rows:[["Anak Tukang Sepatu, Tapi Tidak Pakai Sepatu","20K"],["Janji Terbang ke Langit","10K"],["Prioritas Utama","10K"]]},
+      {title:"Paket",packages:[["Explore Husi","50K"],["Quest + Explore Husi","80K"],["Explore Lempo","80K"],["Quest + Explore Lempo","150K"],["Explore Paha","50K"],["Quest + Explore Paha","80K"],["ALL NODKRAI 6.0","300K"]]}
+    ]
+  },
+  {
+    name:"Nodkrai 6.3", subtitle:"Quest & Explore Nodkrai",
+    groups:[
+      {title:"Quest",rows:[["Gelombang Tiupan Angin","5K"],["Menara Terbalik","15K"],["Saat Lagu Perang Dimekakan","15K"],["Malam Terakhir, Cahaya Pertama","10K"],["Gema Lagu Yang Diasingkan","10K"],["Silsilah Gagak","10K"],["Kembali ke Tangan Pemilik Sebenarnya","15K"],["Menghukum Pendosa Dengan Dosa","10K"],["Dengungan Roh Para Pahlawan","5K"]]},
+      {title:"Explore",rows:[["Voidsea Outlook","60K"],["Wavechaser Plain","60K"],["Ashveil Peak","60K"]]},
+      {title:"Paket",packages:[["Quest Total","95K"],["Eksplore Total","180K"],["Full Eksplore + Quest","275K"],["DISKON","250K"]]}
+    ]
+  },
+  {
     name:"Easybreeze Holiday Resort", subtitle:"Quest & Explore",
     groups:[
       {title:"Quest Prasyarat (wajib)",rows:[["Menuju Liburan yang Menyenangkan!","10K"],["Tantang tebing warna (bag 1)","10K"],["Tantang tebing guitzli (bag 2)","15K"],["Tantang teluk gelombang (bag 3)","10K"],["Dunia adalah Kanvasmu (bag 4)","10K"],["Jejak Chroma: Bersinarlah Pipilpan Idol","5K"],["Paititi Mimpi Indah","5K"]]},
