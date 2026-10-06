@@ -142,7 +142,8 @@ body.intro-active{overflow:hidden}
 
 
 /* Reliable hero title reveal after intro */
-.hero-content{opacity:1!important;transform:none!important;visibility:visible}
+.hero-content{opacity:0;transform:none;visibility:visible}
+.hero-content.hero-ready{opacity:1}
 .hero-content.hero-ready > .eyebrow,
 .hero-content.hero-ready > h1,
 .hero-content.hero-ready > .hero-subtitle,
