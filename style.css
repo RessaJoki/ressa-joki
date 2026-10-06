@@ -234,3 +234,6 @@ body.intro-active{overflow:hidden}
 @media(max-width:720px){.testimonial-empty{padding:22px 18px;align-items:flex-start}.testimonial-empty p{font-size:12px}}
 
 .testimonial-submit{display:table;margin:16px auto 0}
+
+.testimonial-empty > div{flex:1;min-width:0}
+.testimonial-submit{display:table;margin:16px auto 0}
