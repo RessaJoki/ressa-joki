@@ -259,7 +259,7 @@ function renderTestimonials(){
       <article class="testimonial-card reveal visible">
         <span class="testimonial-mark">“</span>
         <span class="testimonial-category">✦ ${esc(item.service || "Ressa Joki")}</span>
-        <p>${esc(item.text)}</p>
+        <p>“${esc(String(item.text || "").replace(/^["“”\']+|["“”\']+$/g, ""))}”</p>
         <span class="testimonial-author"><span class="testimonial-rating">${rating}</span> &nbsp;—&nbsp; ${esc(item.name)}</span>
       </article>
     `;
