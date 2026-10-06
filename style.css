@@ -238,3 +238,65 @@ body.intro-active{overflow:hidden}
 
 .testimonial-empty > div{flex:1;min-width:0}
 .testimonial-submit{display:table;margin:16px auto 0}
+
+
+/* ===== MANUAL AUTO SCROLL CONTROL ===== */
+.auto-scroll-control{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:160;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  min-height:44px;
+  padding:11px 15px;
+  border:1px solid rgba(142,203,255,.28);
+  border-radius:999px;
+  background:rgba(10,15,28,.88);
+  backdrop-filter:blur(14px);
+  color:#dfeeff;
+  box-shadow:0 10px 30px rgba(0,0,0,.28);
+  cursor:pointer;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.7px;
+  transition:transform .22s ease,border-color .22s ease,background .22s ease,box-shadow .22s ease;
+}
+.auto-scroll-control:hover{
+  transform:translateY(-2px);
+  border-color:rgba(142,203,255,.55);
+  background:rgba(18,26,45,.94);
+  box-shadow:0 14px 36px rgba(0,0,0,.36);
+}
+.auto-scroll-control.active{
+  border-color:rgba(142,203,255,.6);
+  background:linear-gradient(135deg,rgba(142,203,255,.18),rgba(187,162,255,.16));
+}
+.auto-scroll-icon{
+  width:22px;
+  height:22px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:rgba(142,203,255,.12);
+  color:var(--accent);
+  font-size:10px;
+}
+.auto-scroll-label{white-space:nowrap}
+@media(max-width:700px){
+  .auto-scroll-control{
+    right:14px;
+    bottom:14px;
+    width:46px;
+    height:46px;
+    min-height:46px;
+    padding:0;
+    justify-content:center;
+  }
+  .auto-scroll-label{display:none}
+  .auto-scroll-icon{width:24px;height:24px;font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){
+  .auto-scroll-control{transition:none}
+}
