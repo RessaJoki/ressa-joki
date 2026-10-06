@@ -7,9 +7,7 @@
 const WHATSAPP_NUMBER = "6288224803141";
 
 const testimonialData = [
-  // Testimoni yang sudah disetujui ditambahkan di sini.
-  // Contoh:
-  // {name:"Adit",service:"Joki Explore",rating:5,text:"Pengerjaannya cepat dan sesuai target."}
+  {name:"Rep",service:"Archon Quest",rating:5,text:"auto jadi langganan ini mah"}
 ];
 
 const questPriceData = [
