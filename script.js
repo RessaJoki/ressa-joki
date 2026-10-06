@@ -350,22 +350,12 @@ function initAutoScroll(){
   let running=false;
   let frameId=null;
   let lastTime=0;
-  let startTime=0;
-  let startScroll=0;
-  let targetScroll=0;
-  let distance=0;
-  let speed=0;
-  const duration=25000;
+  let speed=28;
 
   const stop=()=>{
     running=false;
     if(frameId!==null){cancelAnimationFrame(frameId);frameId=null;}
     lastTime=0;
-    startTime=0;
-    startScroll=0;
-    targetScroll=0;
-    distance=0;
-    speed=0;
     control.classList.remove("active");
     control.setAttribute("aria-label","Mulai scroll otomatis");
     control.innerHTML='<span class="auto-scroll-icon">▶</span><span class="auto-scroll-label">Auto Scroll</span>';
@@ -373,25 +363,11 @@ function initAutoScroll(){
 
   const tick=(time)=>{
     if(!running) return;
-    if(!startTime){
-      startTime=time;
-      startScroll=window.scrollY;
-      targetScroll=document.documentElement.scrollHeight-window.innerHeight;
-      distance=Math.max(0,targetScroll-startScroll);
-      speed=distance/(duration/1000);
-      lastTime=time;
-    }
-
+    const maxScroll=document.documentElement.scrollHeight-window.innerHeight;
+    if(window.scrollY>=maxScroll-1){stop();return;}
     const deltaTime=Math.max(0,time-lastTime);
     lastTime=time;
-    const nextScroll=Math.min(targetScroll,window.scrollY+(speed*(deltaTime/1000)));
-    window.scrollTo({top:nextScroll,left:0,behavior:"instant"});
-
-    if(nextScroll>=targetScroll-0.5){
-      window.scrollTo({top:targetScroll,left:0,behavior:"instant"});
-      stop();
-      return;
-    }
+    window.scrollTo({top:Math.min(maxScroll,window.scrollY+(speed*(deltaTime/1000))),left:0,behavior:"instant"});
     frameId=requestAnimationFrame(tick);
   };
 
@@ -400,12 +376,7 @@ function initAutoScroll(){
     const maxScroll=document.documentElement.scrollHeight-window.innerHeight;
     if(maxScroll<=1) return;
     running=true;
-    lastTime=0;
-    startTime=0;
-    startScroll=window.scrollY;
-    targetScroll=document.documentElement.scrollHeight-window.innerHeight;
-    distance=Math.max(0,targetScroll-startScroll);
-    speed=distance/(duration/1000);
+    lastTime=performance.now();
     control.classList.add("active");
     control.setAttribute("aria-label","Berhenti scroll otomatis");
     control.innerHTML='<span class="auto-scroll-icon">Ⅱ</span><span class="auto-scroll-label">Stop Scroll</span>';
