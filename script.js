@@ -353,6 +353,8 @@ function initAutoScroll(){
   let startTime=0;
   let startScroll=0;
   let targetScroll=0;
+  let distance=0;
+  let speed=0;
   const duration=25000;
 
   const stop=()=>{
@@ -362,6 +364,8 @@ function initAutoScroll(){
     startTime=0;
     startScroll=0;
     targetScroll=0;
+    distance=0;
+    speed=0;
     control.classList.remove("active");
     control.setAttribute("aria-label","Mulai scroll otomatis");
     control.innerHTML='<span class="auto-scroll-icon">▶</span><span class="auto-scroll-label">Auto Scroll</span>';
@@ -373,13 +377,21 @@ function initAutoScroll(){
       startTime=time;
       startScroll=window.scrollY;
       targetScroll=document.documentElement.scrollHeight-window.innerHeight;
+      distance=Math.max(0,targetScroll-startScroll);
+      speed=distance/(duration/1000);
+      lastTime=time;
     }
-    const elapsed=Math.min(time-startTime,duration);
-    const progress=elapsed/duration;
-    const maxScroll=document.documentElement.scrollHeight-window.innerHeight;
-    targetScroll=Math.max(targetScroll,maxScroll);
-    window.scrollTo(0,startScroll+(targetScroll-startScroll)*progress);
-    if(progress>=1 || window.scrollY>=maxScroll-1){stop();return;}
+
+    const deltaTime=Math.max(0,time-lastTime);
+    lastTime=time;
+    const nextScroll=Math.min(targetScroll,window.scrollY+(speed*(deltaTime/1000)));
+    window.scrollTo({top:nextScroll,left:0,behavior:"instant"});
+
+    if(nextScroll>=targetScroll-0.5){
+      window.scrollTo({top:targetScroll,left:0,behavior:"instant"});
+      stop();
+      return;
+    }
     frameId=requestAnimationFrame(tick);
   };
 
@@ -392,6 +404,8 @@ function initAutoScroll(){
     startTime=0;
     startScroll=window.scrollY;
     targetScroll=document.documentElement.scrollHeight-window.innerHeight;
+    distance=Math.max(0,targetScroll-startScroll);
+    speed=distance/(duration/1000);
     control.classList.add("active");
     control.setAttribute("aria-label","Berhenti scroll otomatis");
     control.innerHTML='<span class="auto-scroll-icon">Ⅱ</span><span class="auto-scroll-label">Stop Scroll</span>';
