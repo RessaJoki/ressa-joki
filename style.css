@@ -102,7 +102,7 @@ body.intro-active{overflow:hidden}
 .intro-glow{position:absolute;border-radius:50%;filter:blur(70px);opacity:.38;pointer-events:none}
 .intro-glow-a{width:38vw;height:38vw;background:#7b4dff;left:-12vw;top:-12vw;animation:floatGlow 6s ease-in-out infinite}
 .intro-glow-b{width:32vw;height:32vw;background:#45bfff;right:-10vw;bottom:-12vw;animation:floatGlow 7s ease-in-out infinite reverse}
-.intro-content{position:relative;z-index:2;text-align:center;padding:30px 20px;animation:introContent .9s cubic-bezier(.2,.8,.2,1) both}
+.intro-content{position:relative;z-index:2;text-align:center;padding:30px 20px;animation:introContent 1.15s cubic-bezier(.2,.8,.2,1) both}
 .intro-logo-wrap{position:relative;width:170px;height:170px;margin:0 auto 16px;display:block}
 .intro-logo{position:absolute;width:125px;height:125px;left:50%;top:50%;transform:translate(-50%,-50%);object-fit:contain;filter:drop-shadow(0 0 28px rgba(184,139,255,.65));animation:logoPulse 2.4s ease-in-out infinite}
 .intro-ring{display:none}
