@@ -7,7 +7,9 @@
 const WHATSAPP_NUMBER = "6288224803141";
 
 const testimonialData = [
-  {name:"Rep",service:"Archon Quest",rating:5,text:"auto jadi langganan ini mah"}
+  {name:"Rep",service:"Archon Quest",rating:5,text:"\"auto jadi langganan ini mah\""},
+  {name:"Kairan",service:"Archon Quest",rating:5,text:"\"Auto langganan di kak soalnya ketemu yang trusted\""},
+  {name:"Namiyaeeu",service:"Joki Explore",rating:5,text:"\"Jujur ga nyangka secepet ini\""}
 ];
 
 const questPriceData = [
