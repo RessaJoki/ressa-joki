@@ -350,7 +350,7 @@ function initAutoScroll(){
   let running=false;
   let frameId=null;
   let lastTime=0;
-  let speed=28;
+  let speed=60;
 
   const stop=()=>{
     running=false;
