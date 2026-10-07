@@ -367,7 +367,7 @@ function initAutoScroll(){
     if(window.scrollY>=maxScroll-1){stop();return;}
     const deltaTime=Math.max(0,time-lastTime);
     lastTime=time;
-    window.scrollTo({top:Math.min(maxScroll,window.scrollY+(speed*(deltaTime/1000))),left:0,behavior:"instant"});
+    window.scrollTo(0,Math.min(maxScroll,window.scrollY+(speed*(deltaTime/1000))));
     frameId=requestAnimationFrame(tick);
   };
 
