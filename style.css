@@ -115,7 +115,7 @@ body.intro-active{overflow:hidden}
 .intro-content h2 span{display:block;color:#c6a3ff}
 .intro-content p{margin:14px 0 24px;color:#d8dced;font-size:14px;letter-spacing:1px}
 .intro-progress{width:min(310px,72vw);height:3px;margin:0 auto 20px;background:rgba(255,255,255,.13);border-radius:99px;overflow:hidden}
-.intro-progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,#8c5cff,#e8d9ff,#6ecfff);box-shadow:0 0 14px #a974ff;animation:loadBar 2.1s cubic-bezier(.15,.75,.25,1) forwards}
+.intro-progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,#8c5cff,#e8d9ff,#6ecfff);box-shadow:0 0 14px #a974ff;animation:loadBar 2.6s linear both}
 .intro-enter{border:1px solid rgba(197,159,255,.7);background:linear-gradient(135deg,rgba(118,65,255,.85),rgba(72,148,255,.75));color:#fff;padding:12px 24px;border-radius:999px;font-weight:800;letter-spacing:1.2px;cursor:pointer;box-shadow:0 0 25px rgba(129,84,255,.3);transition:transform .2s ease,box-shadow .2s ease}
 .intro-enter:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 0 32px rgba(129,84,255,.55)}
 .intro-enter b{margin-left:8px}
@@ -130,9 +130,9 @@ body.intro-active{overflow:hidden}
 @keyframes ringSpin{to{transform:rotate(360deg)}}
 @keyframes starDrift{to{transform:translate3d(85px,85px,0)}}
 @keyframes floatGlow{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(20px,-18px,0)}}
-@keyframes loadBar{to{width:100%}}
+@keyframes loadBar{0%{width:0}100%{width:100%}}
 @media(max-width:720px){.intro-logo-wrap{width:145px;height:145px}.intro-logo{width:126px;height:126px}.intro-content h2{letter-spacing:4px}.intro-kicker{letter-spacing:2.5px;font-size:9px}.intro-content p{font-size:12px}.hero{background-position:60% center}.order-box{background-position:58% center}}
-@media(prefers-reduced-motion:reduce){.intro-stars,.intro-glow,.intro-logo,.intro-ring,.intro-ring-b{display:none}.intro-progress span{animation:none;width:100%}.intro-content{animation:none}.intro-screen{transition:none}}
+@media(prefers-reduced-motion:reduce){.intro-stars,.intro-glow,.intro-logo,.intro-ring,.intro-ring-b{display:none}.intro-progress span{animation:loadBar 2.6s linear both}.intro-content{animation:none}.intro-screen{transition:none}}
 
 
 /* Navbar logo */
