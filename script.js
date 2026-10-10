@@ -13,9 +13,9 @@ const testimonialData = [
 ];
 
 const questPriceData = [
-  {name:"Mondstadt, Liyue, dan Inazuma",subtitle:"Archon Quest wilayah Mondstadt sampai Inazuma",groups:[{title:"Harga",packages:[["Archon Quest Mondstadt, Liyue, dan Inazuma","15K"]]}]},
-  {name:"Sumeru, Fontaine, dan Natlan",subtitle:"Archon Quest wilayah Sumeru sampai Natlan",groups:[{title:"Harga",packages:[["Archon Quest Sumeru, Fontaine, dan Natlan","25K"]]}]},
-  {name:"Nod-Krai dan Snezhnaya",subtitle:"Archon Quest wilayah Nod-Krai dan Snezhnaya",groups:[{title:"Harga",packages:[["Archon Quest Nod-Krai dan Snezhnaya","30K"]]}]}
+  {name:"Mondstadt, Liyue, dan Inazuma",subtitle:"Archon Quest wilayah Mondstadt sampai Inazuma",groups:[{title:"Harga",packages:[["Archon Quest Mondstadt, Liyue, dan Inazuma","10K"]]}]},
+  {name:"Sumeru, Fontaine, dan Natlan",subtitle:"Archon Quest wilayah Sumeru sampai Natlan",groups:[{title:"Harga",packages:[["Archon Quest Sumeru, Fontaine, dan Natlan","15K"]]}]},
+  {name:"Nod-Krai dan Snezhnaya",subtitle:"Archon Quest wilayah Nod-Krai dan Snezhnaya",groups:[{title:"Harga",packages:[["Archon Quest Nod-Krai dan Snezhnaya","20K"]]}]}
 ];
 
 const priceData = [
