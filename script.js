@@ -151,14 +151,14 @@ const priceData = [
     ]
   },
   {
-    name:"Snezhnaya 7.0", subtitle:"Paket Lengkap: Explore, Quest Prasyarat, Oculi, Teleport & Alam Bayangan",
+    name:"Snezhnaya 7.0", subtitle:"Explore & Quest Prasyarat",
     groups:[
       {title:"Explore",rows:[["Volkodlak Tundra","70K"],["Flamefeather Valley","50K"],["Fellfrost Peak","80K"],["Everfrozen Earth","80K"],["White Birch Snowgrave","60K"]]},
       {title:"Quest Prasyarat — Flamefeather Valley",rows:[["Di kediaman Kehidupan","30K"]]},
       {title:"Quest Prasyarat — Fellfrost Peak",rows:[["Hesperides di Antara Cinta dan Benci","25K"],["Jack Frost Kecil, Masalah Besar","In Explore"],["Demi Pecahan Cermin Es","In Explore"],["Dalam Ketenangan Siklus","In Explore"]]},
       {title:"Quest Prasyarat — Everfrozen Earth",rows:[["Pertikaian Tanpa Kehormatan dan Kemanusiaan","20K"],["Lagu lembut yang Dia Nyanyikan","In Explore"],["Pedang Salju Berhutang","In Explore"]]},
       {title:"Quest Prasyarat — White Birch Snowgrave",rows:[["Di Satu Sisi Istana, di Sisi Lain Makam","25K"],["Istananya Runtuh Diterpa Badai Salju","10K"]]},
-      {title:"Paket",packages:[["All Snezhnaya — Paket Lengkap","270K"]]}
+      {title:"Paket",packages:[["Quest + Explore","450K"]]}
     ]
   }
 ];
