@@ -49,22 +49,18 @@ const priceData = [
       {title:"Quest Prasyarat",rows:[["Chi dari masa lampau","15K"],["Harta hilang harta ditemukan","15K"],["Pohon yang berdiri sendiri","5K"]]},
       {title:"Explore",rows:[["Minlin","70K"],["Bishui Plain","60K"],["Qiongji Estuary","50K"],["Lisha","40K"],["Sea of Clouds","40K"]]},
       {title:"Paket",packages:[["Explore Full","250K"]]}
-    ]
-  },
-  {
-    name:"Chasm", subtitle:"Explore The Chasm",
-    groups:[
-      {title:"Quest Prasyarat",rows:[["Jurnal Penjelajah Chasm","50K"],["Quest Archon Chapter II: Bag. IV","30K"]]},
-      {title:"Explore",rows:[["Chasm Atas","40K"],["Chasm Underground","70K"]]},
-      {title:"Paket",packages:[["Explore","100K"],["Explore + Quest","180K"]]}
-    ]
-  },
-  {
-    name:"Chenyu Vale", subtitle:"Explore Chenyu Vale",
-    groups:[
-      {title:"Quest Prasyarat",rows:[["Berkah Chenyu dari Giok Karam","50K"],["Sepanjang Wangshan Kenangan","20K"]]},
-      {title:"Explore",rows:[["Chenyu Vale: Upper Vale","75K"],["Chenyu Vale: Southern Mountain","75K"],["Mt. Laixin","15K"]]},
-      {title:"Paket",packages:[["Explore","150K"],["Explore + Quest","220K"]]}
+    ],
+    subregions:[
+      {name:"Chasm",subtitle:"Explore The Chasm",groups:[
+        {title:"Quest Prasyarat",rows:[["Jurnal Penjelajah Chasm","50K"],["Quest Archon Chapter II: Bag. IV","30K"]]},
+        {title:"Explore",rows:[["Chasm Atas","40K"],["Chasm Underground","70K"]]},
+        {title:"Paket",packages:[["Explore","100K"],["Explore + Quest","180K"]]}
+      ]},
+      {name:"Chenyu Vale",subtitle:"Explore Chenyu Vale",groups:[
+        {title:"Quest Prasyarat",rows:[["Berkah Chenyu dari Giok Karam","50K"],["Sepanjang Wangshan Kenangan","20K"]]},
+        {title:"Explore",rows:[["Chenyu Vale: Upper Vale","75K"],["Chenyu Vale: Southern Mountain","75K"],["Mt. Laixin","15K"]]},
+        {title:"Paket",packages:[["Explore","150K"],["Explore + Quest","220K"]]}
+      ]}
     ]
   },
   {
@@ -220,6 +216,31 @@ function renderPrices(filter=""){
             </div>
           `).join("")}
         </div>
+        ${(region.subregions || []).length ? `
+          <div class="nested-price-list">
+            <p class="nested-price-label">Area Liyue lainnya</p>
+            ${region.subregions.map(subregion => {
+              const subMatches = q && JSON.stringify(subregion).toLowerCase().includes(q);
+              return `
+                <article class="price-card nested-price-card ${subMatches ? 'open' : ''}">
+                  <div class="price-summary" role="button" tabindex="0" aria-expanded="${subMatches ? 'true' : 'false'}">
+                    <div><h3>${esc(subregion.name)}</h3><small>${esc(subregion.subtitle)}</small></div>
+                    <span class="arrow">⌄</span>
+                  </div>
+                  <div class="price-body"><div class="price-groups">
+                    ${subregion.groups.map(group => `
+                      <div class="price-group">
+                        <h4>${esc(group.title)}</h4>
+                        ${(group.rows || []).map(row => `
+                          <div class="price-row"><span>${esc(row[0])}</span><strong class="${row[1] === 'In Explore' || row[1] === '—' ? 'muted':''}">${esc(row[1])}</strong></div>
+                        `).join("")}
+                        ${(group.packages || []).length ? `<div class="package-grid">${group.packages.map(p => `<div class="package">${esc(p[0])}: <strong>${esc(p[1])}</strong></div>`).join("")}</div>` : ""}
+                      </div>
+                    `).join("")}
+                  </div></div>
+                </article>`;
+            }).join("")}
+          </div>` : ""}
       </div>
     </article>
   `).join("");
