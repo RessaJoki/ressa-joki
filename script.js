@@ -211,7 +211,7 @@ function renderPrices(filter=""){
         </div>
         ${(region.subregions || []).length ? `
           <div class="nested-price-list">
-            <p class="nested-price-label">Area Liyue lainnya</p>
+            <p class="nested-price-label">Area ${esc(region.name)} lainnya</p>
             ${region.subregions.map(subregion => {
               const subMatches = q && JSON.stringify(subregion).toLowerCase().includes(q);
               return `
