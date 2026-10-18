@@ -25,27 +25,6 @@ const characterPriceData = [
   }
 ];
 
-const rikkaMaterialPriceData = [
-  {
-    name:"Referensi Harga Material RikkaStore",
-    subtitle:"Harga pembanding toko lain — bukan harga layanan Ressa Joki",
-    groups:[
-      {title:"Material Musuh",rows:[
-        ["Enemy Drops Rarity 1 — 100 pcs","Rp17.000"],
-        ["Enemy Drops Rarity 2 — 70 pcs","Rp17.000"],
-        ["Enemy Drops Rarity 3 — 70 pcs","Rp20.000"],
-        ["Enemy Drops Rarity 4 — 50 pcs","Rp20.000"],
-        ["Enemy Drops Rarity 5 — 30 pcs","Rp22.000"]
-      ]},
-      {title:"Material Lain",rows:[
-        ["World Boss Materials — 46 pcs","Rp20.000"],
-        ["Local Specialties — 165 pcs","Rp20.000"],
-        ["Crystalfly — 100 pcs","Rp20.000"]
-      ]}
-    ]
-  }
-];
-
 const stagePriceData = [
   {
     name:"Joki Alam Bayangan", subtitle:"Alam Bayangan (Shadow Realm) & Di Ambang Kematian",
@@ -376,7 +355,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderQuestPrices();
   renderDedicatedPrices(characterPriceData, "characterPriceList");
   renderDedicatedPrices(stagePriceData, "stagePriceList");
-  renderDedicatedPrices(rikkaMaterialPriceData, "rikkaMaterialPriceList");
   renderTestimonials();
   setWhatsAppLinks();
   document.getElementById("year").textContent = new Date().getFullYear();
@@ -387,7 +365,7 @@ document.addEventListener("DOMContentLoaded", () => {
   menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => menu.classList.remove("open")));
   window.addEventListener("scroll", () => nav.classList.toggle("scrolled", window.scrollY > 20), {passive:true});
 
-  document.getElementById("priceSearch").addEventListener("input", e => { renderPrices(e.target.value); renderQuestPrices(e.target.value); renderDedicatedPrices(characterPriceData, "characterPriceList", e.target.value, "Story Character tidak ditemukan."); renderDedicatedPrices(stagePriceData, "stagePriceList", e.target.value, "Joki stage tidak ditemukan."); renderDedicatedPrices(rikkaMaterialPriceData, "rikkaMaterialPriceList", e.target.value, "Harga material RikkaStore tidak ditemukan."); });
+  document.getElementById("priceSearch").addEventListener("input", e => { renderPrices(e.target.value); renderQuestPrices(e.target.value); renderDedicatedPrices(characterPriceData, "characterPriceList", e.target.value, "Story Character tidak ditemukan."); renderDedicatedPrices(stagePriceData, "stagePriceList", e.target.value, "Joki stage tidak ditemukan."); });
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
