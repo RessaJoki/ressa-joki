@@ -69,14 +69,13 @@ const priceData = [
       {title:"Quest Prasyarat",rows:[["Ritual Pemurnian Sacred Sakura","50K"],["Kisah Tatara","15K"],["Warisan Orobas​hi","30K"],["Pemburu Badai Seirai","25K"],["Harta Karun Seirai","5K"],["Dasar Pemandian Bulan","20K"],["Perjalanan Melalui Kabut","60K"]]},
       {title:"Explore",rows:[["Narukami Island","70K"],["Kannazuka","70K"],["Yashiori Island","70K"],["Watatsumi Island","70K"],["Seirai Island","70K"],["Tsurumi Island","80K"]]},
       {title:"Paket",packages:[["Full Quest","205K"],["Full Explore","430K"],["Quest + Explore","620K"]]}
-    ]
-  },
-  {
-    name:"Enkanomiya", subtitle:"Explore Enkanomiya",
-    groups:[
-      {title:"Quest Prasyarat",rows:[["Quest Buka Map Enkanomiya","—"],["Dasar Pemandian Bulan","20K"],["Aliran Air Yang Tenang","20K"],["Dari Senja Hingga Fajar Di Byakuyakokoku","30K"]]},
-      {title:"Quest Prasyarat Explore",rows:[["Koleksi Naga Dan Ular","30K"],["Rahasia Erebos","15K"],["Pemakan Lotus","10K"],["Nyanyian Duka Hyperion","15K"]]},
-      {title:"Paket",packages:[["Explore Enkanomiya","80K"],["Quest + Explore","200K"]]}
+    ],
+    subregions:[
+      {name:"Enkanomiya",subtitle:"Explore Enkanomiya",groups:[
+        {title:"Quest Prasyarat",rows:[["Quest Buka Map Enkanomiya","—"],["Dasar Pemandian Bulan","20K"],["Aliran Air Yang Tenang","20K"],["Dari Senja Hingga Fajar Di Byakuyakokoku","30K"]]},
+        {title:"Quest Prasyarat Explore",rows:[["Koleksi Naga Dan Ular","30K"],["Rahasia Erebos","15K"],["Pemakan Lotus","10K"],["Nyanyian Duka Hyperion","15K"]]},
+        {title:"Paket",packages:[["Explore Enkanomiya","80K"],["Quest + Explore","200K"]]}
+      ]}
     ]
   },
   {
