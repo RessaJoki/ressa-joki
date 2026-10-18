@@ -18,19 +18,21 @@ const questPriceData = [
   {name:"Nod-Krai dan Snezhnaya",subtitle:"Archon Quest wilayah Nod-Krai dan Snezhnaya",groups:[{title:"Harga",packages:[["Archon Quest Nod-Krai dan Snezhnaya","20K"]]}]}
 ];
 
-const priceData = [
+const characterPriceData = [
   {
     name:"Story Character", subtitle:"Joki Story Character",
-    groups:[
-      {title:"Harga",rows:[["Story Character","10K"]]}
-    ]
-  },
+    groups:[{title:"Harga",rows:[["Story Character","10K"]]}]
+  }
+];
+
+const stagePriceData = [
   {
     name:"Joki Stage", subtitle:"Di Ambang Kematian & Alam Bayangan",
-    groups:[
-      {title:"Harga per Stage",rows:[["Di Ambang Kematian","15K / stage"],["Alam Bayangan (Shadow Realm)","5K / stage"]]}
-    ]
-  },
+    groups:[{title:"Harga per Stage",rows:[["Di Ambang Kematian","15K / stage"],["Alam Bayangan (Shadow Realm)","5K / stage"]]}]
+  }
+];
+
+const priceData = [
   {
     name: "Mondstadt",
     subtitle: "Explore Mondstadt",
@@ -235,6 +237,46 @@ function renderPrices(filter=""){
   });
 }
 
+function renderDedicatedPrices(data, elementId, filter="", emptyText="Tidak menemukan harga yang cocok.") {
+  const list = document.getElementById(elementId);
+  if(!list) return;
+  const q = filter.trim().toLowerCase();
+  const filtered = data.filter(item => JSON.stringify(item).toLowerCase().includes(q));
+  if(!filtered.length) {
+    list.innerHTML = q ? `<div class="price-empty">${esc(emptyText)}</div>` : "";
+    return;
+  }
+  list.innerHTML = filtered.map(region => `
+    <article class="price-card ${q ? 'open' : ''}">
+      <div class="price-summary" role="button" tabindex="0" aria-expanded="${q ? 'true':'false'}">
+        <div><h3>${esc(region.name)}</h3><small>${esc(region.subtitle)}</small></div>
+        <span class="arrow">⌄</span>
+      </div>
+      <div class="price-body"><div class="price-groups">
+        ${region.groups.map(group => `
+          <div class="price-group">
+            <h4>${esc(group.title)}</h4>
+            ${(group.rows || []).map(row => `
+              <div class="price-row"><span>${esc(row[0])}</span><strong>${esc(row[1])}</strong></div>
+            `).join("")}
+          </div>
+        `).join("")}
+      </div></div>
+    </article>
+  `).join("");
+  list.querySelectorAll(".price-summary").forEach(summary => {
+    const toggle = () => {
+      const card = summary.parentElement;
+      const isOpen = card.classList.toggle("open");
+      summary.setAttribute("aria-expanded", String(isOpen));
+    };
+    summary.addEventListener("click", toggle);
+    summary.addEventListener("keydown", e => {
+      if(e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); }
+    });
+  });
+}
+
 function renderQuestPrices(filter=""){
   const list = document.getElementById("questPriceList");
   if(!list) return;
@@ -311,6 +353,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderPrices();
   renderQuestPrices();
+  renderDedicatedPrices(characterPriceData, "characterPriceList");
+  renderDedicatedPrices(stagePriceData, "stagePriceList");
   renderTestimonials();
   setWhatsAppLinks();
   document.getElementById("year").textContent = new Date().getFullYear();
@@ -321,7 +365,7 @@ document.addEventListener("DOMContentLoaded", () => {
   menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => menu.classList.remove("open")));
   window.addEventListener("scroll", () => nav.classList.toggle("scrolled", window.scrollY > 20), {passive:true});
 
-  document.getElementById("priceSearch").addEventListener("input", e => { renderPrices(e.target.value); renderQuestPrices(e.target.value); });
+  document.getElementById("priceSearch").addEventListener("input", e => { renderPrices(e.target.value); renderQuestPrices(e.target.value); renderDedicatedPrices(characterPriceData, "characterPriceList", e.target.value, "Story Character tidak ditemukan."); renderDedicatedPrices(stagePriceData, "stagePriceList", e.target.value, "Joki stage tidak ditemukan."); });
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
