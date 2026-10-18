@@ -20,6 +20,12 @@ const questPriceData = [
 
 const priceData = [
   {
+    name:"Story Character", subtitle:"Joki Story Character",
+    groups:[
+      {title:"Harga",rows:[["Story Character","10K"]]}
+    ]
+  },
+  {
     name:"Joki Stage", subtitle:"Di Ambang Kematian & Alam Bayangan",
     groups:[
       {title:"Harga per Stage",rows:[["Di Ambang Kematian","15K / stage"],["Alam Bayangan (Shadow Realm)","5K / stage"]]}
