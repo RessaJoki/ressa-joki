@@ -105,7 +105,7 @@ const priceData = [
     ]
   },
   {
-    name:"NATLAN", subtitle:"Explore Natlan",
+    name:"Natlan", subtitle:"Explore Natlan",
     groups:[],
     subregions:[
       {name:"Natlan 5.0",subtitle:"Natlan Map 5.0",groups:[
