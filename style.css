@@ -300,3 +300,12 @@ body.intro-active{overflow:hidden}
 @media(prefers-reduced-motion:reduce){
   .auto-scroll-control{transition:none}
 }
+
+/* Tabel daftar harga material */
+.material-table-wrap{max-width:1100px;margin:0 auto 34px;overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,rgba(18,24,43,.9),rgba(10,13,24,.92));box-shadow:0 10px 35px rgba(0,0,0,.15)}
+.material-table{width:100%;border-collapse:collapse;text-align:left;color:var(--text);font-size:13px}
+.material-table th{padding:14px 18px;background:rgba(142,203,255,.09);color:var(--accent);font-size:11px;letter-spacing:1px;text-transform:uppercase}
+.material-table td{padding:13px 18px;border-top:1px solid rgba(183,200,255,.1);color:#c9cfdd}
+.material-table td:last-child{font-weight:700;color:#f4f7ff;white-space:nowrap}
+.material-table tbody tr:hover{background:rgba(255,255,255,.025)}
+@media(max-width:600px){.material-table{font-size:12px}.material-table th,.material-table td{padding:12px 10px}.material-table th{font-size:10px}}
