@@ -27,7 +27,7 @@ const characterPriceData = [
 
 const stagePriceData = [
   {
-    name:"Joki Stage", subtitle:"Di Ambang Kematian & Alam Bayangan",
+    name:"Joki Alam Bayangan", subtitle:"Alam Bayangan (Shadow Realm) & Di Ambang Kematian",
     groups:[{title:"Harga per Stage",rows:[["Di Ambang Kematian","15K / stage"],["Alam Bayangan (Shadow Realm)","5K / stage"]]}]
   }
 ];
