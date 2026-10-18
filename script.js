@@ -131,6 +131,10 @@ const priceData = [
     ]
   },
   {
+    name:"Nodkrai", subtitle:"Quest & Explore Nodkrai",
+    groups:[],
+    subregions:[
+{
     name:"Nodkrai 6.0", subtitle:"Husi Island • Lempo Isle • Paha Isle",
     groups:[
       {title:"Husi Island",rows:[["Kisah Gerbang Batu","5K"],["Cermin, Labirin, dan Sang Tsar","10K"],["Demi Sebuah Pulau yang Hijau","10K"],["Hadiah Fatamorgana","5K"],["Gema Masa Lalu yang Tak Terselesaikan","10K"]]},
@@ -151,6 +155,8 @@ const priceData = [
     name:"Frost Moon", subtitle:"Joki Frost Moon",
     groups:[
       {title:"Paket",packages:[["Quest Frost Moon","70K"],["Explore Frost Moon","150K"],["Quest + Explore","200K"],["Harga spesial 10 orang pertama","180K"]]}
+    ]
+  }
     ]
   },
   {
