@@ -309,3 +309,13 @@ body.intro-active{overflow:hidden}
 .material-table td:last-child{font-weight:700;color:#f4f7ff;white-space:nowrap}
 .material-table tbody tr:hover{background:rgba(255,255,255,.025)}
 @media(max-width:600px){.material-table{font-size:12px}.material-table th,.material-table td{padding:12px 10px}.material-table th{font-size:10px}}
+
+/* Submenu Chasm dan Chenyu Vale di dalam kartu Liyue */
+.nested-price-list{display:grid;gap:10px;margin-top:20px;padding-top:18px;border-top:1px solid rgba(183,200,255,.12)}
+.nested-price-label{margin:0 0 2px;color:var(--muted);font-size:11px;letter-spacing:1.2px;text-transform:uppercase}
+.nested-price-card{background:rgba(7,10,20,.55);box-shadow:none;border-color:rgba(183,200,255,.12)}
+.nested-price-card .price-summary{padding:15px 17px}
+.nested-price-card .price-summary h3{font-size:15px}
+.nested-price-card .price-body{padding:15px}
+.nested-price-card .price-groups{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:900px){.nested-price-card .price-groups{grid-template-columns:1fr}}
