@@ -21,7 +21,7 @@ const questPriceData = [
 const characterPriceData = [
   {
     name:"Story Character", subtitle:"Joki Story Character",
-    groups:[{title:"Harga",rows:[["Story Character","15K"],["Event Undangan Karakter (All Ending)","10K"]]}]
+    groups:[{title:"Harga",rows:[["Story Character","15K"],["Event Undangan Karakter (Semua Ending)","10K"]]}]
   }
 ];
 
@@ -44,7 +44,7 @@ const priceData = [
     ]
   },
   {
-    name:"Liyue", subtitle:"Explore Liyue",
+    name:"Liyue", subtitle:"Eksplorasi Liyue",
     groups:[
       {title:"Quest Prasyarat",rows:[["Chi dari masa lampau","15K"],["Harta hilang harta ditemukan","15K"],["Pohon yang berdiri sendiri","5K"]]},
       {title:"Explore",rows:[["Minlin","70K"],["Bishui Plain","60K"],["Qiongji Estuary","50K"],["Lisha","40K"],["Sea of Clouds","40K"]]},
@@ -64,7 +64,7 @@ const priceData = [
     ]
   },
   {
-    name:"Inazuma", subtitle:"Explore Inazuma",
+    name:"Inazuma", subtitle:"Eksplorasi Inazuma",
     groups:[
       {title:"Quest Prasyarat",rows:[["Ritual Pemurnian Sacred Sakura","50K"],["Kisah Tatara","15K"],["Warisan Orobas​hi","30K"],["Pemburu Badai Seirai","25K"],["Harta Karun Seirai","5K"],["Dasar Pemandian Bulan","20K"],["Perjalanan Melalui Kabut","60K"]]},
       {title:"Explore",rows:[["Narukami Island","70K"],["Kannazuka","70K"],["Yashiori Island","70K"],["Watatsumi Island","70K"],["Seirai Island","70K"],["Tsurumi Island","80K"]]},
@@ -79,7 +79,7 @@ const priceData = [
     ]
   },
   {
-    name:"Sumeru Forest", subtitle:"Explore Sumeru Forest",
+    name:"Sumeru Forest", subtitle:"Eksplorasi Hutan Sumeru",
     groups:[
       {title:"Quest Prasyarat",rows:[["Aranyaka + 76 Aranara","250K"]]},
       {title:"Explore",rows:[["Ashavan Realm","80K"],["Vissudha Field","50K"],["Ardravi Valley","70K"],["Vanarana","30K"],["Lokapala Jungle","60K"],["Lost Nursery","20K"],["Avidya Forest","50K"]]},
@@ -87,7 +87,7 @@ const priceData = [
     ]
   },
   {
-    name:"Sumeru Desert", subtitle:"Explore Sumeru Desert",
+    name:"Sumeru Desert", subtitle:"Eksplorasi Gurun Sumeru",
     groups:[
       {title:"Quest Prasyarat",rows:[["Mimpi emas","20K"],["Bukit ganda","30K"],["Dilema grafu","15K"],["Lagu berkabung bilqis","60K"],["Tadla si elang pemburu","15K"],["Kiamat yang telah berlalu","15K"],["Khavarenna baik dan buruk","80K"]]},
       {title:"Explore",rows:[["Land of Lower Setekh","70K"],["Land of Upper Setekh","60K"],["Hypostyle Desert","80K"],["Desert of Hadramaveth","100K"],["Gavireh Lajavard","70K"],["Realm of Farakhkert","70K"]]},
@@ -95,7 +95,7 @@ const priceData = [
     ]
   },
   {
-    name:"Fontaine", subtitle:"Explore Fontaine",
+    name:"Fontaine", subtitle:"Eksplorasi Fontaine",
     groups:[
       {title:"Quest Prasyarat — Bagian 1",rows:[["Petualangan Narzissenkreuz","70K"],["Warna-Warna Kuno","60K"],["Jejak pasang laut","30K"],["Kitab Kebenaran Samudra","20K"]]},
       {title:"Quest Prasyarat — Bagian 2",rows:[["Komedi Yang Belum Selesai","80K"],["Institut Penelitian Fontaine","40K"],["Menuju Keganjilan","20K"],["Cahaya Penghiantan Dasar Laut","15K"]]},
@@ -105,7 +105,7 @@ const priceData = [
     ]
   },
   {
-    name:"Natlan", subtitle:"Explore Natlan",
+    name:"Natlan", subtitle:"Eksplorasi Natlan",
     groups:[],
     subregions:[
       {name:"Natlan 5.0",subtitle:"Natlan Map 5.0",groups:[
