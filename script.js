@@ -21,7 +21,7 @@ const questPriceData = [
 const characterPriceData = [
   {
     name:"Story Character", subtitle:"Joki Story Character",
-    groups:[{title:"Harga",rows:[["Story Character","10K"]]}]
+    groups:[{title:"Harga",rows:[["Story Character","15K"],["Event Undangan Karakter","10K"]]}]
   }
 ];
 
